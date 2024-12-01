@@ -1,7 +1,7 @@
 /*Todos os estilos estão sendo aplicados na tela de (login.html) e (recupera-senha.html)*/
-body { 
-  background-color:var(--dark);
-  background-image: url(/images/img_login.jpg);
+body {
+  background-color: var(--dark);
+  background-image: url(../images/img_login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -13,18 +13,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  min-height: 100vh;
 }
 .card {
-  background-color: #F7F7FF;
-  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f7f7ff;
+  max-width: 300px;
   border: 0.5px solid var(--black-borde);
   border-radius: 10px;
   padding: 20px;
+  height: auto;
+}
+
+.card .logo-tipo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card .img-logo {
   width: 100px;
-  margin-left: 30%;
 }
 form {
   padding: 10px;
@@ -35,8 +45,8 @@ label {
 }
 .input-login,
 .input-senha,
-.input-email{
-  background-color: #F7F7FF;
+.input-email {
+  background-color: #f7f7ff;
   display: block;
   padding: 5px;
   width: 95%;
@@ -55,12 +65,12 @@ label {
 
 .input-login:focus,
 .input-senha:focus,
-.input-email:focus{
+.input-email:focus {
   border: 2px solid var(--blue);
   box-shadow: 0px 0px 2px 0px var(--blue);
 }
 #erroCredenciais,
-#erroEmailInvalido{
+#erroEmailInvalido {
   display: none;
 }
 .usuario-senha-invalido,
@@ -73,15 +83,16 @@ label {
   padding: 5px;
   font-size: 13px;
 }
-.lembrar-me{
+.lembrar-me {
   display: flex;
   align-items: center;
-  justify-content:start;
+  justify-content: start;
   margin-top: 10px;
 }
 .input-checkbox {
   cursor: pointer;
-}.text-lembrar-me {
+}
+.text-lembrar-me {
   cursor: pointer;
 }
 .btn-entrar,
@@ -108,6 +119,7 @@ label {
 }
 .btn-cad-empresa,
 .btn-retornar-login {
+  width: 100%;
   padding: 7px 65px;
   margin: 10px 0 10px 0px;
   border-radius: 4px;
@@ -125,10 +137,10 @@ label {
   background: #ffc107;
   color: black;
 }
-.recuperar-senha{
+.recuperar-senha {
   margin-bottom: 10px;
 }
-.recuperar-senha a{
+.recuperar-senha a {
   color: rgba(0, 0, 0, 0.988);
   text-decoration: none;
   transition: 0.6s ease;
@@ -149,4 +161,20 @@ a.wa-me {
   color: green;
   font-size: 15px;
   cursor: pointer;
+}
+
+/*   ************** 425px ************************* */
+@media (max-width: 426px) {
+  .card {
+    width: 80%;
+  }
+  .btn-cad-empresa,
+  .btn-entrar,
+  .btn-recuperar-senha,
+  .btn-retornar-login {
+    height: 30px;
+    font-size: 0.8em;
+    padding: 2px;
+  }
+ 
 }
