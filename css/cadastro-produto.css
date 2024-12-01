@@ -1,0 +1,140 @@
+.cod,
+.cod-referencia {
+    width: 120px;
+}
+.cod-barras {
+    width: 300px;
+}
+.descricao {
+    width: 42%;
+}
+.preco-custo,
+.preco-venda {
+    width: 110px;
+}
+.margen {
+    width: 70px;
+}
+.estoque-atual,
+.estoque-minimo {
+    width: 90px;
+}
+.coversao-un {
+    width: 100px;
+}
+/* 2° COLUNA */
+.col-vertical-checkbox{
+    margin: auto 50px;
+}
+/* 3° COLUNA */
+select 
+.categoria,
+.subcategoria,
+.marcas {
+    width: 160px;
+}
+/* 4° COLUNA */
+div.tipo-desconto{
+    display: none;
+}
+.max-desconto {
+    width: 100px;
+}
+/* 5° COLUNA */
+.comissao-produto{
+    display: none;
+}
+.comisao {
+    width: 90px;
+}
+/* 6° COLUNA */
+.detalhes-produto{
+    display: none;
+}
+.ref-balanca,
+.largura,
+.altura,
+.complemento,
+.peso-liquido,
+.peso-bruto {
+    width: 100px;
+}
+/* 7° COLUNA COMPOSICAO */
+div.produtos-composicao{
+    display: none;
+}
+.selecionar-produtos{
+    width: 300px;
+}
+.qtd-composicao{
+    width: 80px;
+}
+.produtos-add-composicao{
+    display: none;
+}
+/* 8° COLUNA VARIACOES*/
+div.produtos-variacoes{
+    display: none;
+}
+.variacoes{
+    margin-left: 5px;
+}
+.variacoes-cod-barras{
+    width: 200px;
+}
+.variacoes-descricao {
+    width: 250px;
+}
+.variacoes-preco-custo,
+.variacoes-preco-venda {
+    width: 110px;
+}
+.variacoes-margem {
+    width: 70px;
+}
+.variacoes-estoque-atual,
+.variacoes-estoque-minimo {
+    width: 90px;
+}
+.produtos-add-grade{
+    display: none;
+}
+/* 9° COLUNA PRECO PROMOCIONAL */
+div.preco-promocional{
+    display: none;
+
+}
+input.valor-atual,
+.valor-preco-promocional{
+    width: 90px;
+}
+input.qtd-minima,
+.qtd-maxima{
+    width: 60px;
+}
+input.validade-promocao{
+    width: 150px;
+}
+
+/* 10° COLUNA VALIDADE */
+div .lote-validade{
+    display: none;
+}
+.lote,
+.data-validade,
+.alerta-dias {
+    width: 130px;
+    cursor: pointer;
+}
+
+/* 11° COLUNA PRODUTO TIPO PIZZA */
+div.produto-tipo-pizza{
+    display: none;
+}
+input.pequena,
+.media,
+.grande,
+.familia{
+    width: 120px;
+}
+

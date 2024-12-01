@@ -1,0 +1,28 @@
+.cnpj-cpf , input , label{
+    cursor: pointer;
+}
+.tipo-pf {
+    display: none;
+}
+div.btn-cnpj-cpf{
+ display: flex;
+}
+.razao-social,
+.name,
+.name-fantasia,
+.email{
+    width: 300px;
+}
+div.buscar-cep{
+    display: flex;
+}
+.endereco {
+    width: 400px;
+}
+#data-nascimento{
+    display: none;
+}
+.col-vertical-checkbox{
+    margin: auto 50px;
+}
+

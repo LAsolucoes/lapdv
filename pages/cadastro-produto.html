@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/cadastro-produto.css">
+    <link rel="stylesheet" href="/css/cadastro-new.css">
+</head>
+
+<body>
+    <div class="content">
+        <main>
+            <div class="container-principal">
+                <div>
+                    <h4>Novo Produto</h4>
+                    <div id="feedback-inativo">
+                        <p>PRODUTO INATIVO !!!</p>
+                        <p></p>
+                    </div>
+                    <hr>
+                    <form action="" method="">
+                        <div>
+                            <div class="col-vertical">
+                                <label for="">Codigo</label>
+                                <div>
+                                    <input class="cod" type="number" name="" id="" readonly>
+                                </div>
+                            </div>
+                            <div class="col-vertical">
+                                <label for="codBarras">Codigo de Barras</label>
+                                <div>
+                                    <input class="cod-barras" type="number" name="codBarras" id="codBarras">
+                                    <button type="button" class="btn-acoes btn-barcode" title="Gerar Codigo de Barras"
+                                        id="btn-cod-barras">
+                                        <i class="fa-solid fa-barcode"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-vertical">
+                                <label for="referencia">Referencia</label>
+                                <div>
+                                    <input class="cod-referencia" type="number" name="referencia" id="">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="nomeProduto" class="required">Descrição</label>
+                                <div>
+                                    <input class="descricao" type="text" name="nomeProduto" id="">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-vertical">
+                                    <label for="precoCusto" class="required">Preço de Custo</label>
+                                    <div>
+                                        <input class="preco-custo" type="number" name="precoCusto" id="">
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="margem" class="required">Margem %</label>
+                                    <div>
+                                        <input class="margen" type="number" name="margem" id="">
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="precoVenda" class="required">Preço Venda</label>
+                                    <div>
+                                        <input class="preco-venda" type="number" name="precoVenda" id="precoVenda">
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="">Estoque Atual</label>
+                                    <div>
+                                        <input class="estoque-atual" type="number" name="estoque-atual"
+                                            id="estoque-atual">
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="">Estoque Minimo</label>
+                                    <div>
+                                        <input class="estoque-minimo" type="number" name="" id="">
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="">Un.</label>
+                                    <div>
+                                        <select class="coversao-un" name="" id="">
+                                            <option value="" selected>--</option>
+                                            <option value="1">KG</option>
+                                            <option value="2">LITRO</option>
+                                            <option value="3">ML</option>
+                                            <option value="4">PC</option>
+                                            <option value="5">GR</option>
+                                            <option value="6">SACO</option>
+                                            <option value="7">TAMBOR</option>
+                                            <option value="8">VASO</option>
+                                            <option value="9">PALETE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                       
+                            <!--Categoria-->
+                            <div>
+                                <div class="col-vertical">
+                                    <label for="">Categoria</label>
+                                    <div>
+                                        <select class="categoria" name="" id="">
+                                            <option value="" disabled selected>--</option>
+                                            <option value="">WHISK</option>
+                                            <option value="">GIN</option>
+                                            <option value="">ENERGETICO</option>
+                                            <option value="">CERVEJA</option>
+                                            <option value="">VODKA</option>
+                                            <option value="">CX CERVEJAS</option>
+                                            <option value="">REFRIGERANTES</option>
+                                            <option value="">TABACARIA</option>
+                                            <option value="">CIGARROS</option>
+                                            <option value="">BOBONIERE</option>
+                                            <option value="">LONG NECK</option>
+                                            <option value="">DIVERSOS</option>
+                                        </select>
+                                        <button type="button" class="btn-open-modal" id="btn-open-modal-categoria">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+
+                                        <div class="modal-add" id="modalAddCategoria">
+                                            <div class="modal-content-add">
+                                                <h2>NOVA CATEGORIA</h2>
+                                                <hr>
+                                                <div>
+                                                    <input class="add-novo" type="text" id="infoCategoria">
+                                                </div>
+                                                <div class="modal-confirmar">
+                                                    <button type="button" class="btn-cancel" id="btn-cancel-categoria">
+                                                        <i class="fa-solid fa-x"></i> &nbsp;Cancelar</button>
+                                                    <button type="submit" class="button btn-success"><i
+                                                            class="fa-solid fa-check"></i> &nbsp;Salvar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="">SubCategoria</label>
+                                    <div>
+                                        <select class="subcategoria" name="" id="">
+                                            <option value="" selected>--</option>
+                                            <option value="">WHISK</option>
+                                            <option value="">GIN</option>
+                                            <option value="">ENERGETICO</option>
+                                            <option value="">CERVEJA</option>
+                                            <option value="">VODKA</option>
+                                            <option value="">CX CERVEJAS</option>
+                                            <option value="">REFRIGERANTES</option>
+                                            <option value="">TABACARIA</option>
+                                            <option value="">CIGARROS</option>
+                                            <option value="">BOBONIERE</option>
+                                            <option value="">LONG NECK</option>
+                                            <option value="">DIVERSOS</option>
+                                        </select>
+                                        <button type="button" class="btn-open-modal" id="btn-open-modal-subcategoria">
+                                            <i class="fa-solid fa-plus"></i></button>
+                                        <div class="modal-add" id="modalAddSubCategoria">
+                                            <div class="modal-content-add">
+                                                <h2>NOVA SUBCATEGORIA</h2>
+                                                <hr>
+                                                <div>
+                                                    <input class="add-novo" type="text" id="info-SubCategoria">
+                                                </div>
+                                                <div class="modal-confirmar">
+                                                    <button type="button" class="btn-cancel" id="btn-cancel-subcategoria"><i
+                                                            class="fa-solid fa-x"></i> &nbsp;Cancelar</button>
+                                                    <button type="submit" class="button btn-success"><i
+                                                            class="fa-solid fa-check"></i> &nbsp;Salvar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-vertical">
+                                    <label for="">Marcas</label>
+                                    <div>
+                                        <select class="marcas" name="" id="">
+                                            <option value="" selected>--</option>
+                                            <option value="1">JACK DANIELS</option>
+                                            <option value="2">ETERNITY</option>
+                                            <option value="3">COCA COLA</option>
+                                            <option value="4">SKOL</option>
+                                            <option value="5">RED BULL</option>
+                                            <option value="6">BALY</option>
+                                            <option value="7">DEL VALLE</option>
+                                            <option value="8">LACTA</option>
+                                            <option value="9">ELMA CHIPS</option>
+                                            <option value="10">CONVENCAO</option>
+                                            <option value="11">MONSTER</option>
+                                            <option value="12">VIBE</option>
+                                        </select>
+                                        <button type="button" class="btn-open-modal" id="btn-open-modal-marcas"><i
+                                                class="fa-solid fa-plus"></i></button>
+                                        <div class="modal-add" id="modalAddMarcas">
+                                            <div class="modal-content-add">
+                                                <h2>NOVA MARCA</h2>
+                                                <hr>
+                                                <div>
+                                                    <input class="add-novo" type="text" id="info-Marcas">
+                                                </div>
+                                                <div class="modal-confirmar">
+                                                    <button type="button" class="btn-cancel" id="btn-cancel-marcas"><i
+                                                            class="fa-solid fa-x"></i> &nbsp;Cancelar</button>
+                                                    <button type="submit" class="button btn-success"><i
+                                                            class="fa-solid fa-check"></i> &nbsp;Salvar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <hr>
+                             <!--REAJUSATE | GERENCIAR | INATIVO -->
+                        <div>
+                            <div class="col-vertical col-vertical-checkbox">
+                                <div>
+                                    <label for="">Gerenciar Estoque:</label>
+                                    <i class="fa-solid fa-info" id="infoIcon"
+                                        onclick="abrirModalInfo('infoModalGerenciarEstoque')"
+                                        title="Click e Saiba Mais"></i>
+                                    <div id="infoModalGerenciarEstoque" class="modal-info">
+                                        <div class="modal-content-info">
+                                            <span class="close"
+                                                onclick="fecharModalInfo('infoModalGerenciarEstoque')">&times;</span>
+                                            <h2>GERENCIAR ESTOQUE:</h2>
+                                            <ul>
+                                                <li>
+                                                    Ao ativar a opção <strong>'Gerenciar Estoque'</strong>,
+                                                    o
+                                                    produto<strong> NÃO</strong> estará
+                                                    disponível para venda se o Estoque Atual for igual á
+                                                    zero (0).
+                                                </li><br>
+                                                <li>
+                                                    Ao desabilitar a opção <strong>'Gerenciar
+                                                        Estoque'</strong>, o
+                                                    produto
+                                                    <strong>NÃO</strong>
+                                                    gerenciarar estoque e fica livre para venda , mesmo que
+                                                    Estoque
+                                                    Atual
+                                                    for igual á zero (0).
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input class="custom-checkbox" type="checkbox" name="" id="gerenciar-estoque"
+                                            onclick="gerenciarEstoqueProduto()" checked>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-vertical col-vertical-checkbox">
+                                <div>
+                                    <label for="">Reajuste Automatico:</label>
+                                    <i class="fa-solid fa-info" id="infoIcon"
+                                        onclick="abrirModalInfo('infoModalReajuste')" title="Click e Saiba Mais"></i>
+                                    <div id="infoModalReajuste" class="modal-info">
+                                        <div class="modal-content-info">
+                                            <span class="close"
+                                                onclick="fecharModalInfo('infoModalReajuste')">&times;</span>
+                                            <h2>REAJUSTE AUTOMATICO:</h2>
+                                            <p>"Ao ativar a opção <strong>'Reajuste Automatico'</strong>,
+                                                Após a inclusão de uma nova nota de entrada o sistema
+                                                automaticamente
+                                                ajusta
+                                                o
+                                                valor de venda de acordo com a margem de lucro definida no
+                                                cadastro
+                                                do
+                                                produto." </p>
+                                            <h2>(Margem %)</h2>
+                                            <ul>
+                                                <li>
+                                                    Se o sistema detectar que o custo do produto diminuiu,
+                                                    ele ajustará automaticamente baseado na margem de lucro
+                                                    e
+                                                    reduzirá o
+                                                    preço de venda.
+                                                </li><br>
+                                                <li>
+                                                    Se o sistema detectar que o custo do produto aumentou,
+                                                    ele ajustará automaticamente baseado na margem de lucro
+                                                    e
+                                                    aumentará
+                                                    o
+                                                    preço de venda.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input class="custom-checkbox-red" type="checkbox" name="" id="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-vertical col-vertical-checkbox">
+                                <div>
+                                    <label for="">Ativo:</label>
+                                    <i class="fa-solid fa-info" id="infoIcon" onclick="abrirModalInfo('infoModalAtivo')"
+                                        title="Click e Saiba Mais"></i>
+                                    <div id="infoModalAtivo" class="modal-info">
+                                        <div class="modal-content-info">
+                                            <span class="close"
+                                                onclick="fecharModalInfo('infoModalAtivoe')">&times;</span>
+                                            <h2>ATIVO:</h2>
+                                            <p>"Ao ativar a opção <strong>'Ativo'</strong>, o produto ficará
+                                                oculto e
+                                                não
+                                                estará
+                                                disponível para venda."</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input class="custom-checkbox-dark" type="checkbox" name="" id="ativo"
+                                            onclick="produtoInativo()" checked>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                             <!--Desconto Maximo-->
+                            <div>
+                                <div class="col-vertical">
+                                    <div>
+                                        <label for="">Desconto Máximo no Produto: </label>
+                                        <i class="fa-solid fa-info" id="infoIcon"
+                                            onclick="abrirModalInfo('infoModalMaximo')" title="Click e Saiba Mais"></i>
+                                        <div id="infoModalMaximo" class="modal-info">
+                                            <div class="modal-content-info">
+                                                <span class="close"
+                                                    onclick="fecharModalInfo('infoModalMaximo')">&times;</span>
+                                                <h2>DESCONTO MAXIMO:</h2>
+                                                <p>
+                                                    "Ao ativar a opção <strong>'Desconto Máximo no Produto'</strong>, um
+                                                    desconto
+                                                    máximo será atribuido ao produto para fins de venda,
+                                                    com base no valor especificado nos campos preenchidos.
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input class="custom-checkbox" type="checkbox" id="desconto-produto"
+                                                onclick="descontoProduto()">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tipo-desconto" id="tipo-desconto">
+                                    <div class="col-vertical">
+                                        <label for="tipo-Desconto">Tipo Desconto:</label>
+                                        <div>
+                                            <select id="selecionarTipoDesconto" onchange="tipoDesconto()">
+                                                <option value="" selected>--</option>
+                                                <option value="1">Desconto R$</option>
+                                                <option value="2">Desconto %</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-vertical">
+                                        <div>
+                                            <label for="descontoReal">Desconto Maximo R$</label>
+                                            <div>
+                                                <input class="max-desconto" type="number" id="descontoReal" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-vertical">
+                                        <div>
+                                            <label for="descontoPorcentagem">Desconto Maximo %</label>
+                                            <div>
+                                                <input class="max-desconto" type="number" id="descontoPorcentagem"
+                                                    disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <!--Comissao do Produto-->
+                                <div>
+                                    <div class="col-vertical">
+                                        <div>
+                                            <label for="">Comissão do Produto: </label>
+                                            <i class="fa-solid fa-info" id="infoIcon"
+                                                onclick="abrirModalInfo('infoModalComissaoProduto')"
+                                                title="Click e Saiba Mais"></i>
+                                            <div id="infoModalComissaoProduto" class="modal-info">
+                                                <div class="modal-content-info">
+                                                    <span class="close"
+                                                        onclick="fecharModalInfo('infoModalComissaoProduto')">&times;</span>
+                                                    <h2>COMISSÃO PRODUTO:</h2>
+                                                    <p>"Ao ativar a opção <strong>'Comissão do Produto'</strong>, um
+                                                        valor
+                                                        será aplicado na comissão do produto,
+                                                        com base na quantidade especificada nos campos preenchidos,
+                                                        sejam
+                                                        elas valores fixos ou porcentagem.</p>
+                                                    <p>Objetivo da função e poder variar as comissões,
+                                                        estabelecendo valores fixos para determinados produtos.
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input class="custom-checkbox" type="checkbox" id="comissao-do-produto"
+                                                    onclick="comissaoProduto()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comissao-produto" id="comissao-produto">
+                                        <div class="col-vertical">
+                                            <label for="">Tipo Comissão:</label>
+                                            <div>
+                                                <select id="tipo-comissao" onchange="tipoComissao()">
+                                                    <option value="" selected>--</option>
+                                                    <option value="1">Comissão R$</option>
+                                                    <option value="2">Comissão %</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-vertical">
+                                            <div>
+                                                <label for="">Comisão R$</label>
+                                                <div>
+                                                    <input class="comisao" type="number" name="" id="comissaoReal"
+                                                        disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-vertical">
+                                            <div>
+                                                <label for="">Comissão %</label>
+                                                <div>
+                                                    <input class="comisao" type="number" name=""
+                                                        id="comissaoPorcentagem" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!--Detalhes do Produto-->
+                                    <div>
+                                        <div class="col-vertical">
+                                            <div>
+                                                <label for="">Detalhes do Produto: </label>
+                                                <i class="fa-solid fa-info" id="infoIcon"
+                                                    onclick="abrirModalInfo('infoModalPrecoPromocional')"
+                                                    title="Click e Saiba Mais"></i>
+                                                <div id="infoModalPrecoPromocional" class="modal-info">
+                                                    <div class="modal-content-info">
+                                                        <span class="close"
+                                                            onclick="fecharModalInfo('infoModalPrecoPromocional')">&times;</span>
+                                                        <h2>DETALHES DO PRODUTO:</h2>
+                                                        <p>"Ao ativar a opção <strong>'Detalhes do Produto'</strong>, o
+                                                            usuário do sistema
+                                                            poderá adicionar informações complementares do Produto.</p>
+
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <input class="custom-checkbox" type="checkbox" id="detalhesProduto"
+                                                        onclick="infoDetalhesProduto()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detalhes-produto" id="detalhes-produto">
+                                            <div class="col-vertical">
+                                                <label for="">Referencia da Balança:</label>
+                                                <div>
+                                                    <input class="ref-balanca" type="number" name="" id="ref-balanca">
+                                                </div>
+                                            </div>
+                                            <div class="col-vertical">
+                                                <label for="">Largura</label>
+                                                <div>
+                                                    <input class="largura" type="number" name="" id="largura">
+                                                </div>
+                                            </div>
+                                            <div class="col-vertical">
+                                                <label for="">Altura</label>
+                                                <div>
+                                                    <input class="altura" type="number" name="" id="altura">
+                                                </div>
+                                            </div>
+                                            <div class="col-vertical">
+                                                <label for="">Complemento</label>
+                                                <div>
+                                                    <input class="complemento" type="number" name="" id="complemento">
+                                                </div>
+                                            </div>
+                                            <div class="col-vertical">
+                                                <label for="">Peso Liquido</label>
+                                                <div>
+                                                    <input class="peso-liquido" type="number" name="peso-liquido"
+                                                        id="peso-liquido">
+                                                </div>
+                                            </div>
+                                            <div class="col-vertical">
+                                                <label for="">Peso Bruto</label>
+                                                <div>
+                                                    <input class="peso-bruto" type="number" name="peso-bruto"
+                                                        id="peso-bruto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!--Composicao-->
+                                        <div>
+                                            <div class="col-vertical">
+                                                <div>
+                                                    <label for="composicao">Combo | Kits: </label>
+                                                    <i class="fa-solid fa-info" id="infoIcon"
+                                                        onclick="abrirModalInfo('infoModalComposicao')"
+                                                        title="Click e Saiba Mais"></i>
+                                                    <div id="infoModalComposicao" class="modal-info">
+                                                        <div class="modal-content-info">
+                                                            <span class="close"
+                                                                onclick="fecharModalInfo('infoModalComposicao')">&times;</span>
+                                                            <h2>COMBOS | KITS</h2>
+                                                            <p>"Ao ativar a opção <strong>'Composição'</strong>, o
+                                                                produto
+                                                                será composto
+                                                                por outros produtos do seu estoque."</p>
+                                                            <h2>Regras da Composição:</h2>
+                                                            <ul>
+                                                                <li>É necessário que os produtos da composição tenham
+                                                                    estoque disponível
+                                                                    ou estejam com o botão <strong>'Gerenciar
+                                                                        Estoque'</strong>
+                                                                    desabilitado.</li>
+                                                                <li>Caso não haja estoque dos produtos da composição, o
+                                                                    sistema não
+                                                                    permitirá a venda devido à falta do produto ou à
+                                                                    quantidade
+                                                                    insuficiente.</li>
+                                                                <li>Um Produto Combo | Kits <strong>NÃO</strong>
+                                                                    Gerencia
+                                                                    Estoque, pois
+                                                                    não
+                                                                    depende de um estoque próprio, mas sim dos produtos
+                                                                    que
+                                                                    o compõem.
+                                                                </li>
+                                                                <li>Por exemplo, um lanche chamado
+                                                                    <strong>X-TUDO</strong>
+                                                                    Gerencia
+                                                                    Estoque, pois é um produto tipo Combo que depende da
+                                                                    composição. A
+                                                                    composição pode incluir<em> pão, hambúrguer, salada,
+                                                                        mussarela,
+                                                                        presunto, ovos, bacon, entre outros</em>.</li>
+                                                                <li>No exemplo acima, um<strong> X-TUDO </strong>é um
+                                                                    produto composto
+                                                                    por todos os outros produtos cadastrados
+                                                                    individualmente.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input">
+                                                        <input class="custom-checkbox" type="checkbox" id="composicao"
+                                                            onclick="atribuicoesComposicao()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="produtos-composicao" id="produtosComposicao">
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Produtos</label>
+                                                        <div>
+                                                            <input class="selecionar-produtos"
+                                                                id="selecionarProdutoComposicao"
+                                                                placeholder="Selecione um Produto ou mais da Composição">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Quantidade</label>
+                                                        <div>
+                                                            <input class="qtd-composicao" type="number"
+                                                                id="qtdComposicao">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Preço Custo</label>
+                                                        <div>
+                                                            <input class="preco-custo" type="number"
+                                                                id="precoCustoComposicao">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Custo Total</label>
+                                                        <div>
+                                                            <input class="preco-venda" type="number"
+                                                                id="precoVendaComposicao">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Adicionar</label>
+                                                        <div>
+                                                            <input type="button" class="btn-add-produto button btn-dark"
+                                                                id="btn-add-grade" value="Adicionar">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <hr>
+                                        <!--Variações-->
+                                        <div>
+                                            <div class="col-vertical">
+                                                <div>
+                                                    <label for="variacoes">Produtos com Variações</label>
+                                                    <i class="fa-solid fa-info" id="infoIcon"
+                                                        onclick="abrirModalInfo('infoModalVariacoes')"
+                                                        title="Click e Saiba Mais"></i>
+                                                    <div id="infoModalVariacoes" class="modal-info">
+                                                        <div class="modal-content-info">
+                                                            <span class="close"
+                                                                onclick="fecharModalInfo('infoModalVariacoes')">&times;</span>
+                                                            <h2>PRODUTOS COM VARIAÇÕES</h2>
+                                                            <p>Ao ativar a opção <strong>'Produtos com
+                                                                    Variações'</strong>,
+                                                                o produto
+                                                                poderá ter variações de tamanhos e modelos.</p>
+                                                            <p>Ex: P - M - G - GG</p>
+                                                            <p>Ex: Tam. 36 - 38 - 40 - 42 - 44</p>
+                                                            <p>Ex: Cores: Preto - Branco - Azul - Vermelho</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input class="custom-checkbox" type="checkbox" id="variacoes"
+                                                            onclick="atribuicoesVariaveis()">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="produtos-variacoes" id="produtosVariacoes"
+                                                style="display: none;">
+                                                <!-- Inicialmente oculto -->
+                                                <div class="col-vertical">
+                                                    <label for="variacoesDescricao">Descrição</label>
+                                                    <div>
+                                                        <input class="variacoes-descricao" type="text"
+                                                            id="variacoesDescricao">
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <label for="variacoesCodBarras">Código de Barras</label>
+                                                    <div>
+                                                        <input class="variacoes-cod-barras" type="number"
+                                                            id="variacoesCodBarras">
+                                                        <button type="button" class="btn-acoes btn-barcode"
+                                                            title="Gerar Código de Barras" id="btn-barcode">
+                                                            <i class="fa-solid fa-barcode"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <label for="variacoesPrecoCusto">Preço de Custo</label>
+                                                    <div>
+                                                        <input class="variacoes-preco-custo" type="number"
+                                                            id="variacoesPrecoCusto">
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <label for="variacoesMargem">Margem %</label>
+                                                    <div>
+                                                        <input class="variacoes-margem" type="number"
+                                                            id="variacoesMargem">
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <label for="variacoesPrecoVenda">Preço de Venda</label>
+                                                    <div>
+                                                        <input class="variacoes-preco-venda" type="number"
+                                                            id="variacoesPrecoVenda">
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <label for="variacoesEstoqueAtual">Estoque Atual</label>
+                                                    <div>
+                                                        <input class="variacoes-estoque-atual" type="number"
+                                                            id="variacoesEstoqueAtual">
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <label for="variacoesEstoqueMinimo">Estoque Mínimo</label>
+                                                    <div>
+                                                        <input class="variacoes-estoque-minimo" type="number"
+                                                            id="variacoesEstoqueMinimo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="btn-add-variacoes">Adicionar</label>
+                                                        <div>
+                                                            <input type="button"
+                                                                class="btn-add-variacoes button btn-dark"
+                                                                id="btn-add-variacoes" value="Adicionar">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!--Preço Promocional-->
+                                        <div>
+                                            <div class="col-vertical">
+                                                <div class="chek-validade">
+                                                    <label for="">Preço Promocional: </label>
+                                                    <i class="fa-solid fa-info" id="infoIcon"
+                                                        onclick="abrirModalInfo('infoModalPrecoPromocional')"
+                                                        title="Click e Saiba Mais"></i>
+                                                    <div id="infoModalPrecoPromocional" class="modal-info">
+                                                        <div class="modal-content-info">
+                                                            <span class="close"
+                                                                onclick="fecharModalInfo('infoModalPrecoPromocional')">&times;</span>
+                                                            <h2>PREÇO PROMOCIONAL:</h2>
+                                                            <p>"Ao ativar a opção <strong>'Preço Promocional'</strong>,
+                                                                um
+                                                                desconto
+                                                                será aplicado ao produto para fins de venda,
+                                                                com base na quantidade especificada nos campos
+                                                                preenchidos.
+                                                            </p>
+                                                            <p>Quando a quantidade preenchida atingir ou exceder o
+                                                                limite
+                                                                estabelecido,
+                                                                ao finalizar o lançamento de todos os produtos, o
+                                                                sistema
+                                                                aplicará
+                                                                automaticamente um desconto.</p>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Valor Atual:</strong> Exibe o preço de venda
+                                                                    atual do
+                                                                    produto para o usuário do sistema.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Qtd. Mínima:</strong> Define a quantidade
+                                                                    mínima
+                                                                    para
+                                                                    aplicação do preço promocional.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Valor:</strong> Indica o valor do desconto a
+                                                                    ser
+                                                                    aplicado quando a quantidade mínima for atingida ou
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Qtd. Máxima:</strong> Estabelece a
+                                                                    quantidade
+                                                                    máxima do
+                                                                    produto por cliente. Se deixado em branco,
+                                                                    não será aplicada uma quantidade máxima de compra
+                                                                    por
+                                                                    cliente.
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input class="custom-checkbox" type="checkbox"
+                                                            id="precoPromocional" onclick="precoPromocionalProduto()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="preco-promocional" id="valorPromocional">
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Valor Atual:</label>
+                                                        <div>
+                                                            <input class="valor-atual" type="number" name=""
+                                                                id="valorAtual" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Qtd. Minima </label>
+                                                        <div>
+                                                            <input class="qtd-minima" type="number" name=""
+                                                                id="qtdMinima">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Valor Promocional:</label>
+                                                        <div>
+                                                            <input class="valor-preco-promocional" type="number" name=""
+                                                                id="valorPrecoPromocional">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Qtd. Maxima </label>
+                                                        <div>
+                                                            <input class="qtd-maxima" type="number" name=""
+                                                                id="qtdMaxima">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Validade Promoção:</label>
+                                                        <div class="input">
+                                                            <input class="validade-promocao" type="datetime-local"
+                                                                name="" id="validadePromocao">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!--===========================LOTE VENCIMENTO================================-->
+                                        <div>
+                                            <div class="col-vertical">
+                                                <div>
+                                                    <label for="">Lote de Vencimento: </label>
+                                                    <i class="fa-solid fa-info" id="infoIcon"
+                                                        onclick="abrirModalInfo('infoModalVencimento')"
+                                                        title="Click e Saiba Mais"></i>
+                                                    <div id="infoModalVencimento" class="modal-info">
+                                                        <div class="modal-content-info">
+                                                            <span class="close"
+                                                                onclick="fecharModalInfo('infoModalVencimento')">&times;</span>
+                                                            <h2>LOTE DE VENCIMENTO:</h2>
+                                                            <p>"Ao ativar a opção <strong>'Lote de Vencimento'</strong>
+                                                                e
+                                                                preencher
+                                                                os campos,
+                                                                o sistema emitirá um alerta indicando que o produto está
+                                                                próximo da
+                                                                data de validade,
+                                                                conforme os dados inseridos."</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input">
+                                                        <input class="custom-checkbox" type="checkbox" name=""
+                                                            id="lote-vencimento" onclick="alertaValidade()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lote-validade" id="validade">
+                                                <div class="col-vertical">
+                                                    <div class="chek-validade">
+                                                        <label for="">Nº Lote</label>
+                                                        <div class="input">
+                                                            <input class="lote" type="number" name="" id="numero-lote">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div class="chek-validade">
+                                                        <label for="">Data da Validade </label>
+                                                        <div class="input">
+                                                            <input class="data-validade" type="date" name=""
+                                                                id="data-validade">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div class="chek-validade">
+                                                        <label for="">Alerta de Venciemto (Dias):</label>
+                                                        <div class="input">
+                                                            <input class="alerta-dias" type="number" name=""
+                                                                id="alerta-dias">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <!--PRODUTO TIPO PIZZA-->
+                                        <div>
+                                            <div class="col-vertical">
+                                                <div class="chek-validade">
+                                                    <label for="">Produto Tipo Pizza: </label>
+                                                    <i class="fa-solid fa-info" id="infoIcon"
+                                                        onclick="abrirModalInfo('infoModalTipoPizza')"
+                                                        title="Click e Saiba Mais"></i>
+                                                    <div id="infoModalTipoPizza" class="modal-info">
+                                                        <div class="modal-content-info">
+                                                            <span class="close"
+                                                                onclick="fecharModalInfo('infoModalTipoPizza')">&times;</span>
+                                                            <h2>PRODUTO TIPO PIZZA:</h2>
+                                                            <p>"Ao ativar a opção 'Produto Tipo Pizza', será necessário
+                                                                preencher os
+                                                                valores de acordo com cada tamanho de pizza.</p>
+                                                            <p>Por favor, observe que os campos não preenchidos com os
+                                                                valores
+                                                                correspondentes aos tamanhos não estarão disponíveis
+                                                                para
+                                                                venda.</p>
+                                                            <p>"Preencha somente os campos com os tamanhos
+                                                                correspondentes
+                                                                com os
+                                                                quais o restaurante trabalha."</p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <input class="custom-checkbox" type="checkbox" name=""
+                                                            id="tipo-pizza" onclick="produtoTipoPizza()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="produto-tipo-pizza" id="produto-tipo-pizza">
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Pequena R$</label>
+                                                        <div>
+                                                            <input class="pequena" type="number" name="" id="pequena">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Media R$ </label>
+                                                        <div>
+                                                            <input class="media" type="number" name="" id="media">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Grande R$:</label>
+                                                        <div>
+                                                            <input class="grande" type="number" name="" id="grande">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-vertical">
+                                                    <div>
+                                                        <label for="">Familia R$:</label>
+                                                        <div>
+                                                            <input class="familia" type="number" name="" id="familia">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+
+
+                                        <!-- IMAGEM DO PRODUTO-->
+                                        <div class="col-vertical-img">
+                                            <label class="text-img" for="">Imagem</label>
+                                            <div>
+                                                <img src="/images/sem-foto.png" alt="">
+                                                <!--BOTOES ADICIONAR E REMOVER IMAGEM-->
+                                                <label for="input-imagem" class="add-img">
+                                                    <i class="fa-solid fa-upload" title="Atribuir Imagem"></i>
+                                                </label>
+                                                <input type="file" id="input-imagem" accept="image/*"
+                                                    onchange="handleImageUpload()">
+
+                                                <button class="remover-img" title="Remover Imagem"><i
+                                                        class="fa-solid fa-trash-can"></i></button>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <div class="btn-finalizar">
+                                                <a href="/pages/produtos.html" class="submenu-link btn-cancel"><i
+                                                        class="fa-solid fa-x"></i>
+                                                    &nbsp;Cancelar</a>
+                                                <button type="submit" class="button btn-success"><i
+                                                        class="fa-solid fa-check"></i>
+                                                    &nbsp;Salvar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/atribuicoes-produtos.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/cadastro-new.css">
+    <link rel="stylesheet" href="/css/cadastro-clientes.css">
+</head>
+
+<body>
+    <div class="content">
+        <main>
+            <div class="container-principal">
+                <div>
+                    <h4>Novo Cliente</h4>
+                    <div id="feedback-inativo">
+                        <p></p>
+                    </div>
+                    <hr>
+                    <form action="">
+                        <div id="cnpj-cpf" onchange=" tipoCliente()">
+                            <div>
+                                <label for="" class="required">Tipo de Cliente</label>
+                            </div>
+                            <label>
+                                <input class="input-radio" value="CNPJ" type="radio" name="tipoCliente" id="tipo-cnpj"
+                                    checked>CNPJ</label>
+                            <label>
+                                <input class="input-radio" value="CPF" type="radio" name="tipoCliente"
+                                    id="tipo-cpf">CPF</label>
+                        </div>
+                        <hr>
+
+                        <div class="col-vertical">
+                            <label id="label_cpf_cnpj" for="" class="required">CNPJ</label>
+                            <!--Dinamico-->
+                            <div class="btn-cnpj-cpf">
+                                <input id="inputBuscarPF-PJ" type="text"
+                                    placeholder="00.000.000/0000-00"><!--Dinamico-->
+
+                                <div>
+                                    <button class="btn-filtrar" title="Buscar CNPJ" type="button" id="btn-buscar-cnpj">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tipo-pj" id="tipo-pj"><!--Dinamico-->
+                            <div class="col-vertical" id="razao_social">
+                                <label for="" class="required">Razão Social</label>
+                                <div>
+                                    <input class="razao-social" id="razao-social" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-vertical" id="nome-fantasia">
+                                <label for="">Nome Fantasia</label>
+                                <div>
+                                    <input class="name" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tipo-pf" id="tipo-pf"><!--Dinamico-->
+                            <div class="col-vertical">
+                                <label for="" class="required">Nome</label>
+                                <div>
+                                    <input class="name" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-vertical">
+                            <label for="">E-mail</label>
+                            <div>
+                                <input class="email" type="text">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="">Telefone</label>
+                            <div>
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="">Celular</label>
+                            <div>
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="cep">CEP</label>
+                            <div class="buscar-cep">
+                                <input type="number" id="cep">
+                                <div>
+                                    <button class="btn-filtrar" onclick="buscarEnderecoPorCEP(event)" title="Buscar CEP"
+                                        type="button">
+                                        <i class="fa-solid fa-magnifying-glass"></i>Buscar CEP
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="endereco">Endereço</label>
+                            <div>
+                                <input class="endereco" type="text" id="endereco">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="numero">N°</label>
+                            <div>
+                                <input type="text" id="numero">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="complemento">Complemento</label>
+                            <div>
+                                <input type="text" id="complemento">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="bairro">Bairro</label>
+                            <div>
+                                <input type="text" id="bairro">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="cidade">Cidade</label>
+                            <div>
+                                <input type="text" id="cidade">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="uf">UF</label>
+                            <div>
+                                <select name="uf" id="uf">
+                                    <option value="">--</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-vertical" id="data-nascimento">
+                            <label for="data-nascimento">Data de Nascimento</label>
+                            <div>
+                                <input type="date">
+                            </div>
+                        </div>
+
+                        <div class="col-vertical">
+                            <label for="">Limite de Credito </label>
+                            <div>
+                                <input type="number" id="limite-de-credito" oninput="limiteDisponivel()">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="">Credito Utilizado</label>
+                            <div>
+                                <input type="number" id="credito-utilizado" oninput="limiteDisponivel()">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="">Limite Disponivel</label>
+                            <div>
+                                <input type="number" id="limite-disponivel" readonly>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="col-vertical col-vertical-checkbox">
+                            <div>
+                                <label for="">Ativo:</label>
+                                <i class="fa-solid fa-info" id="infoIcon" onclick="abrirModalInfo('infoModalAtivo')"
+                                    title="Click e Saiba Mais"></i>
+                                <div id="infoModalAtivo" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close" onclick="fecharModalInfo('infoModalAtivo')">&times;</span>
+                                        <h2>ATIVO:</h2>
+                                        <p>"Ao ativar a opção 'Desabilitar Cliente', o cliente não estará disponível
+                                            para
+                                            vincular seus dados
+                                            às compras realizadas no estabelecimento.
+                                            O cliente será marcado como INATIVO e ficará oculto."</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input class="custom-checkbox-dark" type="checkbox" name="" id="ativo"
+                                        onclick="clienteInativo()" checked>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-vertical  col-vertical-checkbox">
+                            <div>
+                                <label for="">Bloqueiar Crédito</label>
+                                <i class="fa-solid fa-info" id="infoIcon"></i>
+                                <div id="infoModal" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close">&times;</span>
+                                        <h2>BLOQUEIAR CRÉDITO</h2>
+                                        <p>"Quando a opção <strong>'Bloquear Crédito'</strong> estiver ativada,
+                                            ao cliente tentar realizar uma compra no estabelecimento utilizando a
+                                            forma
+                                            de
+                                            pagamento CONTAS A RECEBER,
+                                            o usuário do sistema receberá uma notificação informando que o crédito
+                                            do
+                                            cliente está bloqueado."</p>
+                                        <p>"Será gerada uma solicitação de senha do Administrador do Sistema para a
+                                            liberação da venda.
+                                            Essa autorização trará os dados do administrador que permitiu a venda
+                                            mediante o
+                                            uso da senha."
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input class="custom-checkbox-red" type="checkbox" name="" id="bloqueiar-credito"
+                                    title="Bloqueiar Crédito do Cliente" onclick="bloqueiarCredito()">
+                            </div>
+                        </div>
+                        <hr>
+                         <!-- IMAGEM DO PRODUTO-->
+                         <div class="col-vertical-img">
+                            <label class="text-img" for="">Imagem</label>
+                            <div>
+                                <img src="/images/sem-foto.png" alt="">
+                                <!--BOTOES ADICIONAR E REMOVER IMAGEM-->
+                                <label for="input-imagem" class="add-img">
+                                    <i class="fa-solid fa-upload" title="Atribuir Imagem"></i>
+                                </label>
+                                <input type="file" id="input-imagem" accept="image/*">
+
+                                <button class="remover-img" title="Remover Imagem"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="btn-finalizar">
+                                <a href="/pages/clientes.html" class="submenu-link btn-cancel"><i
+                                        class="fa-solid fa-x"></i>
+                                    &nbsp;Cancelar</a>
+                                <button type="button" class="button btn-success"><i class="fa-solid fa-check"></i>
+                                    &nbsp;Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/atribuicoes-clientes.js"></script>
+    <script src="/js/buscar-cep.js"></script>
+</body>
+
+</html>

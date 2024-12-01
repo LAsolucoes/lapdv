@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo - Dashboard</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="avatar-user">
+            <label class="name-user" for=""><i class="fa-regular fa-user fa-shake"></i>Alex &nbsp;</label>
+            <img class="avatar" src="/images/logo.jpg" alt="">
+        </div>
+    </header>
+
+
+    <div class="sidebar">
+        
+        <div class="logo-texto">
+            <img class="img-logo" src="../images/logo.jpg" alt="">
+            <label class="name-logo" for="">LA PDV</label>
+            <i class="fa-solid fa-angles-left"></i>
+        </div>
+        
+        
+        <ul>
+            <div class="conteudo-nav">
+                <li><a href="/pages/graficos.html" class="submenu-link"><i class="fa-solid fa-home"></i>Home</a>
+                </li>
+            </div>
+            <!--CADASTROS-->
+            <div class="conteudo-nav">
+                <li><a href="#cadastros" id="menu_cadastros"><i class="fa-solid fa-address-card"></i>Cadastros</a></li>
+            </div>
+            <ul class="hidden" id="cadastros">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/categorias.html" class="submenu-link"><i
+                                    class="fa-solid fa-list"></i>Categoria</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/marcas.html" class="submenu-link"><i
+                                    class="fa-regular fa-copyright"></i>Marcas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/produtos.html" class="submenu-link"><i
+                                    class="fa-solid fa-shirt"></i>Produtos</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/clientes.html" class="submenu-link"><i
+                                    class="fa-solid fa-address-book"></i>Clientes</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/grupo-clientes.html" class="submenu-link"><i
+                                    class="fa-solid fa-user-group"></i>Grupo de Clientes</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/fornecedores.html" class="submenu-link"><i
+                                    class="fa-solid fa-truck-field"></i>Fornecedores</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/lista-de-precos.html" class="submenu-link"><i
+                                    class="fa-solid fa-money-check-dollar"></i>Lista de Preços</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/usuarios.html" class="submenu-link"><i
+                                    class="fa-solid fa-users"></i>Usuarios</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/taxa-cartoes.html" class="submenu-link"><i
+                                    class="fa-regular fa-credit-card"></i>Taxa de Cartões</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="/pages/taxa-vendas.html" class="submenu-link"><i
+                                    class="fa-solid fa-calculator"></i></i>Taxas de Vendas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-layer-group"></i>Categoria de Serviços</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i>Serviços</a></li>
+                    </div>
+                </div>
+            </ul>
+            <!--ESTOQUE-->
+            <div class="conteudo-nav">
+                <li><a href="#estoque" id="menu_estoque"><i class="fa-solid fa-cubes"></i>Estoque</a>
+                </li>
+            </div>
+            <ul class="hidden" id="estoque">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#categoria"><i class="fa-solid fa-file-import"></i>Entrada Manual</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#marcas"><i class="fa-solid fa-file-circle-check"></i>Entrada Fiscal</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#produtos"><i class="fa-solid fa-file-pen"></i>Nota Saidas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#adicionais"><i class="fa-solid fa-basket-shopping"></i>Compras</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#clientes"><i class="fa-solid fa-envelope"></i>Cotação</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#grupo-de-clientes"><i
+                                    class="fa-solid fa-down-left-and-up-right-to-center"></i>Ajuste de Estoque</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#fornecedores"><i class="fa-solid fa-cart-flatbed"></i>Inventarios</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#usuarios"><i class="fa-solid fa-unlock"></i>Gerenciar Estoque</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li> <a href="#servicos"><i class="fa-solid fa-pen"></i>Lista de Alteração</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#taxa-de-cartoes"><i class="fa-solid fa-sliders"></i>Movimentações</a></li>
+                    </div>
+                </div>
+            </ul>
+            <!--VENDAS-->
+            <div class="conteudo-nav">
+                <li><a href="#vendas" id="menu_vendas"><i class="fa-solid fa-sack-dollar"></i>Vendas</a>
+                </li>
+            </div>
+            <ul class="hidden" id="vendas">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cash-register"></i>Caixa</a> </li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-coins"></i>Lista de Vendas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cart-plus"></i>Vendas Canceladas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-basket-shopping"></i>PDV</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-basket-shopping"></i>Pré Vendas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-basket-shopping"></i>Rascunhos</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-basket-shopping"></i>Consignados</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Venda Balcão</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-money-bill-transfer"></i>Sangrias</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-regular fa-square-plus"></i>Suprimentos</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-minus"></i>Descontos</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                <li><a href="#"><i class="fa-solid fa-minus"></i>Descontos</a></li>
+                        </li>
+                    </div>
+                </div>
+            </ul>
+            <!--FINANCEIRO-->
+            <div class="conteudo-nav">
+                <li><a href="#financeiro" id="menu_financeiro"><i class="fa-solid
+                                fa-chart-simple"></i>Financeiro</a></li>
+            </div>
+            <ul class="hidden" id="financeiro">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cash-register"></i>Contas á Pagar</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-coins"></i>Contas a Receber </a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cart-plus"></i>Contas Pagas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-basket-shopping"></i>Contas Recebidas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Graficos Vendas</a> </li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-money-bill-transfer"></i>Grafico Produtos</a></li>
+                    </div>
+                </div>
+            </ul>
+            <!--MESAS-->
+            <div class="conteudo-nav">
+                <li><a href="#mesas" id="menu_mesas"><i class="fa-solid fa-utensils"></i>Mesas</a>
+                </li>
+            </div>
+            <ul class="hidden" id="mesas">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-regular fa-square-plus"></i>Cadastrar Mesas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-regular fa-folder-open"></i>Mesas Abertas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-regular fa-rectangle-xmark"></i>Mesas Canceladas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-barcode"></i>Gerar QRCode</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-triangle-exclamation"></i>Movimentações Mesas</a></li>
+                    </div>
+                </div>
+            </ul>
+            <!--COMANDAS-->
+            <div class="conteudo-nav">
+                <li><a href="#comandas" id="menu_comandas"><i class="fa-solid fa-barcode"></i>Comandas</a>
+                </li>
+            </div>
+            <ul class="hidden" id="comandas">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-mobile-screen-button"></i>Moblie</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-regular fa-square-plus"></i>Cadastrar Comandas </a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-regular fa-folder-open"></i>Comandas Abertas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-rectangle-xmark"></i>Comandas Canceladas</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Movimentações Comandas</a></li>
+                    </div>
+                </div>
+            </ul>
+            <!--RELATORIOS-->
+            <div class="conteudo-nav">
+                <li><a href="#relatorios" id="menu_relatorios"><i class="fa-regular fa-clipboard"></i>Relatórios</a>
+                </li>
+            </div>
+            <ul class="hidden" id="relatorios">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#" target="_blank"><i class="fa-regular fa-user"></i>Clientes Cadastrados</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li> <a href="#" target="_blank"><i class="fa-brands fa-product-hunt"></i>Produtos
+                                Cadastrados</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#" target="_blank"><i class="fa-regular fa-user"></i>Estoque Minino</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li> <a href="#" target="_blank"><i class="fa-brands fa-product-hunt"></i>Estoque Atual</a></li>
+                    </div>
+                </div>
+            </ul>
+            <!--CONFIGURAÇÕES-->
+            <div class="conteudo-nav">
+                <li><a href="#" id="menu_configuracoes"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+            </div>
+            <ul class="hidden" id="configuracoes">
+                <div class="vertical-line">
+                    <div class="conteudo-nav">
+                        <li><a href="#" id="categorias"><i class="fa-solid fa-house-chimney"></i></i>Empresa </a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-gears"></i>Geral</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-cash-register"></i>Caixa</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-shop-lock"></i>Parametros</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-receipt"></i>NFC</a></li>
+                    </div>
+                    <div class="conteudo-nav">
+                        <li><a href="#"><i class="fa-solid fa-print"></i>Impressoras</a></li>
+                    </div>
+                </div>
+            </ul>
+            <hr>
+            <div class="container-btn-logout">
+                <a class="btn-logout" href="#"><i class="fa-solid fa-right-from-bracket fa-bounce"></i>SAIR</a>
+            </div>
+        </ul>
+
+    </div>
+
+    <div id="conteudo-content"></div>
+    <script src="/js/sidebar.js"></script>
+
+
+
+</body>
+
+</html>

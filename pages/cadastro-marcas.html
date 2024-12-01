@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Marcas</title>
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/cadastro-new.css">
+   
+</head>
+
+<body>
+    <div class="content">
+        <main id="cadastroMarcas">
+            <div class="container-principal">
+                <form action="" method="">
+                    <div>
+                        <h4>Nova Marca</h4>
+                        <div id="feedback-inativo">
+                            <p>MARCA INATIVA !!!</p>
+                            <p>Cadastro disponivel somente para leitura. Se necessário realizar alguma alteração,
+                                Habilite a opção 'ATIVO'.</p>
+                        </div>
+                        <hr>
+                        <label for="">Nome</label>
+                        <div>
+                            <input id="nome-marca" type="text">
+                        </div>
+                        <!-- Toggle Ativo -->
+                        <div class="container-btn-atribuicoes">
+                            <label for="">Ativo:</label> <i class="fa-solid fa-info"
+                                onclick="abrirModalInfo('infoModalAtivo')"></i>
+                            <div>
+                                <input type="checkbox" class="custom-checkbox" 
+                                    id="ativo" checked>
+                            </div>
+                            <!--MODAL INFO-->
+                            <div id="infoModalAtivo" class="modal-info">
+                                <div class="modal-content-info">
+                                    <span class="close" onclick="fecharModalInfo('infoModalAtivo')">&times;</span>
+                                    <h2>ATIVO</h2>
+                                    <p>"Ao ativar a opção <strong>'Ativo'</strong>,a Marca fica disponivel"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div>
+                            <a href="../pages/marcas.html" class="submenu-link button btn-cancel"><i
+                                class="fa-solid fa-arrow-left"></i>Voltar</a>
+                            <button type="submit" class="button btn-success"><i
+                                    class="fa-solid fa-check"></i>Salvar</button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+  
+    <script src="/js/modal.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toggle-ativo.js"></script>
+   
+</body>
+
+</html>

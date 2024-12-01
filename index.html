@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto - LA PDV</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="container-login">
+        <div class="card">
+            <form action="" method="get" id="formularioLogin">
+                <div>
+                    <img class="img-logo" src="images/logo.jpg">
+                </div>
+                <div>
+                    <label for="login">Login</label>
+                    <input class="input-login" type="text" name="login" id="login" required>
+                    <label for="senha">Senha</label>
+                    <input class="input-senha" type="password" name="senha" id="senha" required>
+                </div>
+                <div class="lembrar-me">
+                    <input class="input-checkbox" type="checkbox" name="Lembrar-me" id="Lembrar-me">
+                    <label class="text-lembrar-me" for="Lembrar-me">Lembrar-me</label>
+                </div>
+                <div id="erroCredenciais">
+                    <p class="usuario-senha-invalido"></p>
+                </div>
+                <div>
+                    <button class="btn-entrar" type="submit" title="Acessar o Sistema">Acessar</button>
+                    <a href="../html/planos.html"><input class="btn-cad-empresa" type="button"
+                            value="Cadastrar Minha Empresa" title="Cadastrar Empresa"></a>
+                </div>
+
+                <div class="footer-container">
+                    <div class="recuperar-senha">
+                        <a href="pages/recuperar-senha.html" title="Clique para Redefinir Senha">Recuperar
+                            Senha</a>
+                    </div>
+                    <div class="support">
+                        <a href="http://wa.me/5511940451410" class="wa-me" target="_blank"
+                            title="Clique aqui e Receba Suporte via WhatsApp" aria-label="Suporte via WhatsApp">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <span>(11) 94045-1410</span>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

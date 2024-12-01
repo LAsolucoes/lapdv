@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/cadastro-table.css">
+</head>
+
+<body>
+    <div class="content">
+        <main>
+            <div class="container-principal">
+                <div>
+                    <a href="/pages/cadastro-clientes.html" class="submenu-link button btn-new"><i
+                            class="fa-solid fa-plus"></i>
+                        Novo
+                        Cliente</a>
+                    <a href="/pages/importacao-clientes.html" class="submenu-link button btn-import"
+                        id="importa-clientes"><i class="fa-solid fa-upload"></i> Importação</a>
+                    <a class="button btn-export" href="" onclick="exportarParaExcel()"><i
+                            class="fa-solid fa-download"></i>
+                        Exportar</a>
+                    <a href="/pages/movimentacoes-objetivo.html" class="submenu-link button btn-movimentacoes"><i
+                            class="fa-solid fa-list"></i> Movimentações</a>
+
+                    <hr>
+                    <!--============= FILTROS============= -->
+                    <div>
+                        <div class="col-vertical">
+                            <label for="">Tipo</label>
+
+                            <div>
+                                <select>
+                                    <option value="" selected></option>
+                                    <option value="">Ativo</option>
+                                    <option value="">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-vertical">
+                            <label for="">Pesquise Razão Social ou Nome </label>
+                            <div>
+                                <input class="pesquisar" type="text">
+                            </div>
+                        </div>
+
+                        <div class="col-vertical">
+                            <label for="">Pesquise CPF/CNPJ </label>
+                            <div>
+                                <input class="cpf-cnpj-clientes" type="number">
+                            </div>
+                        </div>
+
+                        <div class="col-vertical">
+                            <label for="">Grupo de Clientes</label>
+
+                            <div>
+                                <select>
+                                    <option value="" selected></option>
+                                    <option value="">Amigos</option>
+                                    <option value="">Clientes</option>
+                                    <option value="">Fornecedores</option>
+                                </select>
+                                <button class="button btn-filtrar"><i
+                                    class="fa-solid fa-magnifying-glass"></i>Pesquisar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <label>Total de Clientes Cadastrados: 17</label>
+                    <!--============= TABELA DA PESQUISA=============-->
+                    <table id="tabela-dados">
+                        <thead>
+                            <tr>
+                                <th>AÇÕES</th>
+                                <th>RAZÃO SOCIAL</th>
+                                <th>CPF/CNPF</th>
+                                <th>CIDADE</th>
+                                <th>TELEFONE</th>
+                                <th>E-MAIL</th>
+                                <th>ATIVO</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="acoes-tabela">
+                                    <button class="btn-acoes btn-edit" title="Editar"><i
+                                            class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-acoes btn-delete" title="Remover"><i
+                                            class="fa-solid fa-trash-can"></i></button>
+                                    <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                            class="fa-solid fa-list"></i></button>
+                                    <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                            class="fa-brands fa-whatsapp"></i></button>
+                                </td>
+                                <td>LA SOLUCOES </td>
+                                <td>22.013.394/0001-55</td>
+                                <td>SÃO PAULO</td>
+                                <td>11 94045-1410</td>
+                                <td>sistemalapdv@gmail.com</td>
+                                <td><i class="fa-solid fa-square-check"></i></td>
+                            </tr>
+
+
+                            <td class="acoes-tabela">
+                                <button class="btn-acoes btn-edit" title="Editar"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-acoes btn-delete" title="Remover"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                        class="fa-solid fa-list"></i></button>
+                                <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                        class="fa-brands fa-whatsapp"></i></button>
+                            </td>
+                            <td>SÃO VICENTE</td>
+                            <td>21.847.354/0001-55</td>
+                            <td>SÃO PAULO</td>
+                            <td>11 958462-1410</td>
+                            <td>saovicente@gmail.com</td>
+                            <td><i class="fa-solid fa-square-check"></i></td>
+                            </tr>
+                            <td class="acoes-tabela">
+                                <button class="btn-acoes btn-edit" title="Editar"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-acoes btn-delete" title="Remover"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                        class="fa-solid fa-list"></i></button>
+                                <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                        class="fa-brands fa-whatsapp"></i></button>
+                            </td>
+                            <td>CAMILA CILHOS</td>
+                            <td>01.258.666/0001-41</td>
+                            <td>SÃO PAULO</td>
+                            <td>11 93805-1410</td>
+                            <td>milacilhos@gmail.com</td>
+                            <td><i class="fa-solid fa-square-check"></i></td>
+                            </tr>
+                            <td class="acoes-tabela">
+                                <button class="btn-acoes btn-edit" title="Editar"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-acoes btn-delete" title="Remover"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                        class="fa-solid fa-list"></i></button>
+                                <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                        class="fa-brands fa-whatsapp"></i></button>
+                            </td>
+                            <td>SANDRA DECORACOES</td>
+                            <td>22.013.394/0001-55</td>
+                            <td>SÃO PAULO</td>
+                            <td>11 94045-1410</td>
+                            <td>sistemalapdv@gmail.com</td>
+                            <td><i class="fa-solid fa-square-check"></i></td>
+                            </tr>
+                            <td class="acoes-tabela">
+                                <button class="btn-acoes btn-edit" title="Editar"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-acoes btn-delete" title="Remover"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                        class="fa-solid fa-list"></i></button>
+                                <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                        class="fa-brands fa-whatsapp"></i></button>
+                            </td>
+                            <td>SALGADERIA</td>
+                            <td>22.013.394/0001-55</td>
+                            <td>SÃO PAULO</td>
+                            <td>11 94045-1410</td>
+                            <td>salgaderia@gmail.com</td>
+                            <td><i class="fa-solid fa-square-check"></i></td>
+                            </tr>
+                            <td class="acoes-tabela">
+                                <button class="btn-acoes btn-edit" title="Editar"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-acoes btn-delete" title="Remover"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                        class="fa-solid fa-list"></i></button>
+                                <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                        class="fa-brands fa-whatsapp"></i></button>
+                            </td>
+                            <td>LA SOLUCOES</td>
+                            <td>22.013.394/0001-55</td>
+                            <td>SÃO PAULO</td>
+                            <td>11 94045-1410</td>
+                            <td>sistemalapdv@gmail.com</td>
+                            <td><i class="fa-solid fa-square-xmark"></i></td>
+                            </tr>
+                            <td class="acoes-tabela">
+                                <button class="btn-acoes btn-edit" title="Editar"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-acoes btn-delete" title="Remover"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btn-acoes btn-movements" title="Movimentações"><i
+                                        class="fa-solid fa-list"></i></button>
+                                <button class="btn-acoes btn-wa-me" title="Whatsapp"><i
+                                        class="fa-brands fa-whatsapp"></i></button>
+                            </td>
+                            <td>LA SOLUCOES</td>
+                            <td>22.013.394/0001-55</td>
+                            <td>SÃO PAULO</td>
+                            <td>11 94045-1410</td>
+                            <td>sistemalapdv@gmail.com</td>
+                            <td><i class="fa-solid fa-square-xmark"></i></td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="../javascript/exportar.js"></script>
+</body>
+
+</html>

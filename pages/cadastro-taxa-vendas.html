@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Taxa de Vendas</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/cadastro-new.css">
+
+</head>
+
+<body>
+    <div class="content">
+        <main>
+            <div class="container-principal">
+                <form action="">
+                    <div>
+                        <h4>Cadastro Taxa de Vendas</h4>
+                        <div id="feedback-inativo">
+                            <p>TAXA DE VENDA INATIVA !</p>
+                            <p> Cadastro disponivel somente para leitura. Se necessário realizar alguma alteração,
+                                Habilite a opção 'ATIVO'.</p>
+                        </div>
+                        <hr>
+                        <div class="col-vertical">
+                            <div>
+                                <label for="">Tipo de Taxa:</label>
+                            </div>
+                            <select id="tipo-taxa" onchange="tipoTaxaVendas()" >
+                                <option value="">Selecione uma opção</option>
+                                <option value="1">DEBITO</option>
+                                <option value="2">CREDITO</option>
+                                <option value="3">PIX</option>
+                                <option value="4">VALE ALIMENTAÇÃO</option>
+                                <option value="5">VALE REFEIÇÃO</option>
+                                <option value="6">CREDIARIO</option>
+                                <option value="7">BOLETO</option>
+                            </select>
+                        </div>
+                        <div class="col-vertical">
+                            <div>
+                                <label for="">Incremento / Redução:</label>
+                            </div>
+                            <select id="tipo-incremento-reducao" disabled onchange="tipoTaxaIncrementoReducao()" >
+                                <option value="" selected> - - </option>
+                                <option value="Incremento">Incremento</option>
+                                <option value="reducao">Redução</option>
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="col-vertical">
+                            <div>
+                                <label for="">Valor / Porcentagem:</label>
+                            </div>
+                            <select id="selecione-tipo" disabled onchange="tipoTaxaValorPorcentagem()" >
+                                <option value="" selected> - - </option>
+                                <option value="dinheiro">Valor R$</option>
+                                <option value="porcentagem">Porcentagem %</option>
+                            </select>
+                        </div>
+                        <div class="col-vertical">
+                            <div>
+                                <label for="">Porcentagem %:</label>
+                            </div>
+                            <input id="valor-porcentagem" type="number" disabled >
+                        </div>
+                        <div class="col-vertical">
+                            <div>
+                                <label for="">Valor R$:</label>
+                            </div>
+                            <input type="number" id="valor-dinheiro" disabled >
+                        </div>
+                        <hr>
+                        <div class="container-btn-atribuicoes">
+                            <label for="">Ativo:</label> <i class="fa-solid fa-info" onclick="abrirModalInfo('infoModalAtivo')"></i>
+                            <div>
+                                <input type="checkbox" class="custom-checkbox" id="ativo" checked onclick="checkboxAtivo()">
+                            </div>
+                            <!--MODAL INFO-->
+                            <div id="infoModalAtivo" class="modal-info">
+                                <div class="modal-content-info">
+                                    <span class="close" onclick="fecharModalInfo('infoModalAtivo')">&times;</span>
+                                    <h2>ATIVO</h2>
+                                    <p>"Ao ativar a opção <strong>'Ativo'</strong>,a Taxa de Cartões fica disponivel"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a href="/pages/taxa-vendas.html" class="submenu-link button btn-cancel"><i
+                                    class="fa-solid fa-arrow-left"></i>Voltar</a>
+                            <button type="submit" class="button btn-success"><i
+                                    class="fa-solid fa-check"></i>Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/globais.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/atribuicoes-taxa-vendas.js"></script>
+</body>
+
+</html>

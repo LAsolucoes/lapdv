@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Usuarios</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/cadastro-new.css">
+    <link rel="stylesheet" href="/css/cadastro-usuarios.css">
+</head>
+
+<body>
+    <main>
+        <div class="content">
+            <div class="container-principal">
+                <div>
+                    <h4>Cadastro de Usuários</h4>
+                    <div id="feedback-inativo">
+                        <p> USUÁRIO INATIVO !!!</p>
+                        <p> Cadastro disponivel somente para leitura. Se necessário realizar alguma alteração,
+                            Habilite a opção 'ATIVO'.</p>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container-form">
+                    <form action="">
+                        <div class="col-vertical">
+                            <label for="nome">Nome</label>
+                            <div>
+                                <input type="text" name="nome" id="name">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="login">Login</label>
+                            <div>
+                                <input type="text" name="login" id="login">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="senha">Senha</label>
+                            <div>
+                                <input type="password" name="senha" id="senha">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <br>
+                            <i class="fa-solid fa-eye" id="icon-visualizar-senha"></i>
+                            <i class="fa-solid fa-eye-slash ocutar-icon-senha" id="icon-ocutar-senha"></i>
+                        </div>
+
+                        <div class="col-vertical">
+                            <label for="email">E-mail</label>
+                            <div>
+                                <input type="email" name="email" id="email" >
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="rota_padrao">Rota Padrão (Opcional)</label>
+                            <div>
+                                <input type="text" name="rota-padrao" id="rota-padrao">
+                            </div>
+                        </div>
+                        <div class="col-vertical">
+                            <label for="lista-precos">Lista de Preços</label>
+                            <div>
+                                <select id="lista-de-preco">
+                                    <option value="" selected>- -</option>
+                                    <option value="2">Varejo</option>
+                                    <option value="3">Atacado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- admin -->
+                        <div>
+                            <div class="col-vertical col-vertical-checkbox">
+                                <label for="tipo_acesso">Admin</label>
+                                <i class="fa-solid fa-info" onclick="abrirModalInfo('infoModalAdmin')"></i>
+                                <div id="infoModalAdmin" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close" onclick="fecharModalInfo('infoModalAdmin')">&times;</span>
+                                        <h2>ADMIN:</h2>
+                                        <p>"Ao ativar a opção <strong>'Admin'</strong>, o usuário do sistema
+                                            terá
+                                            permissoes
+                                            de um usuario <strong>Administrador</strong> , tendo acesso total em
+                                            todas as
+                                            funções. </p>
+                                        <p>"Você pode habilitar o usuário como <strong>Administrador</strong> e
+                                            desabilitar
+                                            algumas funções
+                                            caso necessário."</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input class="custom-checkbox" type="checkbox" id="user-admin"
+                                        onclick=" tipoAdmin()">
+                                </div>
+                            </div>
+                            <!-- gerente -->
+                            <div class="col-vertical col-vertical-checkbox">
+                                <label for="tipo_acesso">Gerente</label>
+                                <i class="fa-solid fa-info" onclick="abrirModalInfo('infoModalGerente')"></i>
+                                <div id="infoModalGerente" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close" onclick="fecharModalInfo('infoModalGerente')">&times;</span>
+                                        <h2>GERENTE:</h2>
+                                        <p>"Ao ativar a opção <strong>'Admin'</strong>, o usuario do sistema
+                                            terá
+                                            permissoes
+                                            de um usuario <strong>Administrador</strong> , tendo acesso total em
+                                            todas as
+                                            funções. </p>
+                                        <p>"Você pode habilitar o usuário como <strong>Administrador</strong> e
+                                            desabilitar
+                                            algumas funções
+                                            caso necessário."</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input class="custom-checkbox" type="checkbox" id="user-gerente"
+                                        onclick="tipoGerente()">
+                                </div>
+                            </div>
+                            <!-- Op. Caixa -->
+                            <div class="col-vertical  col-vertical-checkbox">
+                                <label for="ativo">Op. Caixa</label>
+                                <i class="fa-solid fa-info" onclick="abrirModalInfo('infoModalOpCaixa')"></i>
+                                <div id="infoModalOpCaixa" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close" onclick="fecharModalInfo('infoModalOpCaixa')">&times;</span>
+                                        <h2>ATIVO:</h2>
+                                        <p>Ao <strong>ativar</strong> a opção <strong>'Ativo'</strong>, o
+                                            usuário
+                                            estará
+                                            habilitado para utilizar o sistema.</p>
+                                        <p>Ao <strong>desativar</strong> a opção <strong>'Ativo'</strong>, o
+                                            usuário
+                                            estará
+                                            inativo e não poderá utilizar o sistema.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input class="custom-checkbox" type="checkbox" name="" id="user-op-caixa"
+                                            onclick="tipoCaixa()">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Permitir Desconto -->
+                            <div class="col-vertical col-vertical-checkbox">
+                                <label for="permite_desconto">Permitir Descontos</label>
+                                <i class="fa-solid fa-info" onclick="abrirModalInfo('infoModalPermitirDescontos')"></i>
+                                <div id="infoModalPermitirDescontos" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close"
+                                            onclick="fecharModalInfo('infoModalPermitirDescontos')">&times;</span>
+                                        <h2>PERMITIR DESCONTOS:</h2>
+                                        <p>
+                                            "Ao ativar a opção <strong>'Permitir Descontos'</strong>, o
+                                            usuário terá
+                                            permissão para conceder <strong>descontos</strong> nas vendas."
+                                        </p>
+                                        <p>"O sistema registrará os usuários que realizaram descontos, assim
+                                            como os
+                                            valores
+                                            dos descontos, nos <strong>fechamentos de caixa</strong>, na
+                                            <strong>lista de
+                                                vendas</strong> e nas <strong>Movimentações dos
+                                                Usuarios</strong>."
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input class="custom-checkbox" type="checkbox" name="" id="permitir-descontos"
+                                            onclick="permitirDescontos()">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-vertical">
+                                <label for="senha" id="nome-senha-permitir-desconto">Senha para Desconto</label>
+                                <div class="col-vertical">
+                                    <input type="password" name="senha-desconto" id="senha-permitir-desconto">
+
+                                </div>
+                                <div class="col-vertical">
+                                    <i class="fa-solid fa-eye" id="icon-visualizar-senha-descontos"></i>
+                                    <i class="fa-solid fa-eye-slash " id="icon-ocutar-senha-descontos"></i>
+                                </div>
+                            </div>
+                            <!-- Ativo -->
+                            <div class="col-vertical  col-vertical-checkbox">
+                                <label for="ativo">Ativo</label>
+                                <i class="fa-solid fa-info" onclick="abrirModalInfo('infoModalAtivo')"></i>
+                                <div id="infoModalAtivo" class="modal-info">
+                                    <div class="modal-content-info">
+                                        <span class="close" onclick="fecharModalInfo('infoModalAtivo')">&times;</span>
+                                        <h2>ATIVO:</h2>
+                                        <p>Ao <strong>ativar</strong> a opção <strong>'Ativo'</strong>, o
+                                            usuário
+                                            estará
+                                            habilitado para utilizar o sistema.</p>
+                                        <p>Ao <strong>desativar</strong> a opção <strong>'Ativo'</strong>, o
+                                            usuário
+                                            estará
+                                            inativo e não poderá utilizar o sistema.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input class="custom-checkbox-dark" type="checkbox" name="" id="ativo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <button type="button" class="button btn-success" id="salvar"><i class="fa-solid fa-check"></i>
+                            &nbsp;Salvar</button>
+                        <!--Cadastros-->
+                        <div class="permissoes">
+                            <div>
+                                <label for="">* Selecione as Permissões de Acesso</label>
+                                <div>
+                                    <div class="titulo-permissao">
+                                        <a href="#" id=""><i class="fa-solid fa-address-card"></i> Cadastros</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="permissao-titulo" title="Click sobre o Nome Categoria !">
+                                            <label for="permissao-categoria"><input type="checkbox"
+                                                    id="permissao-categoria"
+                                                    onclick="categoriaPermisao()">CATEGORIA</label>
+                                        </div>
+                                        <div>
+                                            <label for="permissao-categoria-editar"><input type="checkbox"
+                                                    id="permissao-categoria-editar">Editar</label>
+                                            <label for="permissao-categoria-remover"><input type="checkbox"
+                                                    id="permissao-categoria-remover">Remover</label>
+                                            <label for="permissao-categoria-movimentacoes"><input type="checkbox"
+                                                    id="permissao-categoria-movimentacoes">Movimentações</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-marcas"><input type="checkbox" id="permissao-marcas"
+                                                    onclick="marcaPermissao()">MARCAS
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label for="permissao-marcas-editar"><input type="checkbox"
+                                                    id="permissao-marcas-editar">Editar</label>
+                                            <label for="permissao-marcas-remover"><input type="checkbox"
+                                                    id="permissao-marcas-remover">Remover</label>
+                                            <label for="permissao-marcas-movimentacoes"><input type="checkbox"
+                                                    id="permissao-marcas-movimentacoes">Movimentações</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-produtos" class="title-permissao"><input
+                                                    type="checkbox" id="permissao-produtos"
+                                                    onclick="produtosPermissao()">PRODUTOS</label>
+                                        </div>
+                                        <div>
+                                            <label for="permissao-produtos-cadastrar"><input type="checkbox"
+                                                    id="permissao-produtos-cadastrar">Cadastrar
+                                            </label>
+                                            <label for="permissao-produtos-importar"><input type="checkbox"
+                                                    id="permissao-produtos-importar">Importar </label>
+                                            <label for="permissao-produtos-exportar"><input type="checkbox"
+                                                    id="permissao-produtos-exportar">Exportar </label>
+                                            <label for="permissao-produtos-editar"><input type="checkbox"
+                                                    id="permissao-produtos-editar">Editar</label>
+                                            <label for="permissao-produtos-remover"><input type="checkbox"
+                                                    id="permissao-produtos-remover">Remover </label>
+                                            <label for="permissao-produtos-movimentacoes"><input type="checkbox"
+                                                    id="permissao-produtos-movimentacoes">Movimentações
+                                            </label>
+                                            <label for="permissao-produtos-duplicar"><input type="checkbox"
+                                                    id="permissao-produtos-duplicar">Duplicar </label>
+                                            <label for="permissao-produtos-gerar-etiquetas"><input type="checkbox"
+                                                    id="permissao-produtos-gerar-etiquetas">Gerar
+                                                Etiqueta</label>
+                                            <label for="permissao-produtos-editar-preco-custo"><input type="checkbox"
+                                                    id="permissao-produtos-editar-preco-custo">Editar Preço
+                                                Custo</label>
+                                            <label for="permissao-produtos-editar-preco-venda"><input type="checkbox"
+                                                    id="permissao-produtos-editar-preco-venda">Editar Preço
+                                                Venda</label>
+                                            <label for="permissao-produtos-editar-estoque-atual"><input type="checkbox"
+                                                    id="permissao-produtos-editar-estoque-atual">Editar Estoque
+                                                Atual</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <div class="permissao-titulo">
+                                                <label for="permissao-clientes"><input type="checkbox"
+                                                        id="permissao-clientes"
+                                                        onclick="clientesPermissao()">CLIENTES</label>
+                                            </div>
+                                            <div>
+                                                <label for="permissao-clientes-cadastrar"><input type="checkbox"
+                                                        id="permissao-clientes-cadastrar">Cadastrar</label>
+                                                <label for="permissao-clientes-importar"><input type="checkbox"
+                                                        id="permissao-clientes-importar">Importar</label>
+                                                <label for="permissao-clientes-exportar"><input type="checkbox"
+                                                        id="permissao-clientes-exportar">Exportar</label>
+                                                <label for="permissao-clientes-editar"><input type="checkbox"
+                                                        id="permissao-clientes-editar">Editar</label>
+                                                <label for="permissao-clientes-remover"><input type="checkbox"
+                                                        id="permissao-clientes-remover">Remover</label>
+                                                <label for="permissao-clientes-movimentacoes"><input type="checkbox"
+                                                        id="permissao-clientes-movimentacoes">Movimentações</label>
+                                                <label for="permissao-clientes-editar-limite-credito"><input
+                                                        type="checkbox"
+                                                        id="permissao-clientes-editar-limite-credito">Editar
+                                                    Limite de Crédito</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-grupo-clientes"><input type="checkbox"
+                                                    id="permissao-grupo-clientes"
+                                                    onclick="grupoClientesPermissao()">GRUPO DE CLIENTES
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label for="permissao-grupo-clientes-editar"><input type="checkbox"
+                                                    id="permissao-grupo-clientes-editar">Editar</label>
+                                            <label for="permissao-grupo-clientes-remover"><input type="checkbox"
+                                                    id="permissao-grupo-clientes-remover">Remover</label>
+                                            <label for="permissao-grupo-clientes-movimentacoes"><input type="checkbox"
+                                                    id="permissao-grupo-clientes-movimentacoes">Movimentações</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-fornecedores"><input type="checkbox"
+                                                    id="permissao-fornecedores"
+                                                    onclick="fornecedoresPermissao()">FORNECEDORES</label>
+                                        </div>
+                                        <div>
+                                            <label for="permissao-fornecedores-cadastar"><input type="checkbox"
+                                                    id="permissao-fornecedores-cadastrar">Cadastrar</label>
+                                            <label for="permissao-fornecedores-editar"><input type="checkbox"
+                                                    id="permissao-fornecedores-editar">Editar</label>
+                                            <label for="permissao-fornecedores-remover"><input type="checkbox"
+                                                    id="permissao-fornecedores-remover">Remover</label>
+                                            <label for="permissao-fornecedores-movimentacoes"><input type="checkbox"
+                                                    id="permissao-fornecedores-movimentacoes">Movimentações</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-lista-de-precos"><input type="checkbox"
+                                                    id="permissao-lista-de-precos"
+                                                    onclick="listaDePrecosPermissao()">LISTA
+                                                DE PREÇOS</label>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="permissao-lista-de-precos-cadastrar"><input type="checkbox"
+                                                    id="permissao-lista-de-precos-cadastrar">Cadastrar</label>
+                                                <label for="permissao-lista-de-precos-editar"><input type="checkbox"
+                                                        id="permissao-lista-de-precos-editar">Editar</label>
+                                                <label for="permissao-lista-de-precos-remover"><input type="checkbox"
+                                                        id="permissao-lista-de-precos-remover">Remover</label>
+                                                <label for="permissao-lista-de-precos-movimentacoes"><input
+                                                        type="checkbox"
+                                                        id="permissao-lista-de-precos-movimentacoes">Movimentações</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- Usuarios -->
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-usuarios">
+                                                <input type="checkbox" id="permissao-usuarios">USUARIOS</label>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="permissao-usuarios-cadastrar"><input type="checkbox" id="permissao-usuarios-cadastrar">Cadastrar</label>
+                                                <label for="permissao-usuarios-editar"><input type="checkbox" id="permissao-usuarios-editar">Editar</label>
+                                                <label for="permissao-usuarios-remover"><input type="checkbox" id="permissao-usuarios-remover">Remover</label>
+                                                <label for="permissao-usuarios-movimentacoes"><input type="checkbox" id="permissao-usuarios-movimentacoes">Movimentações</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- Taxa de Cartoes -->
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-taxa-cartoes"><input
+                                                    type="checkbox" id="permissao-taxa-cartoes">TAXA DE
+                                                CARTÕES</label>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="permissao-taxa-cartoes-cadastrar"><input type="checkbox" id="permissao-taxa-cartoes-cadastrar">Cadastrar</label>
+                                                <label for="permissao-taxa-cartoes-editar"><input type="checkbox" id="permissao-taxa-cartoes-editar">Editar</label>
+                                                <label for="permissao-taxa-cartoes-remover"><input type="checkbox" id="permissao-taxa-cartoes-remover">Remover</label>
+                                                <label for="permissao-taxa-cartoes-movimentacoes"><input type="checkbox" id="permissao-taxa-cartoes-movimentacoes">Movimentações</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- Taxa de Vendas -->
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-taxa-vendas"><input type="checkbox" id="permissao-taxa-vendas">TAXA DE VENDAS
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="permissao-taxa-vendas-cadastrar"><input type="checkbox" id="permissao-taxa-vendas-cadastrar">Cadastrar</label>
+                                                <label for="permissao-taxa-vendas-editar"><input type="checkbox" id="permissao-taxa-vendas-editar">Editar</label>
+                                                <label for="permissao-taxa-vendas-remover"><input type="checkbox" id="permissao-taxa-vendas-remover">Remover</label>
+                                                <label for="permissao-taxa-vendas-movimentacoes"><input type="checkbox" id="permissao-taxa-vendas-movimentacoes">Movimentações</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- Servicos -->
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-servicos" ><input type="checkbox" id="permissao-servicos">SERVICOS</label>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <label for="permissao-servicos-cadastrar"><input type="checkbox" id="permissao-servicos-cadastrar">Cadastrar</label>
+                                                <label for="permissao-servicos-editar"><input type="checkbox" id="permissao-servicos-editar">Editar</label>
+                                                <label for="permissao-servicos-remover"><input type="checkbox" id="permissao-servicos-remover">Remover</label>
+                                                <label for="permissao-servicos-movimentacoes"><input type="checkbox" id="permissao-servicos-movimentacoes">Movimentações</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="permissao-titulo">
+                                            <label for="permissao-categoria-de-servicos"><input type="checkbox"
+                                                    id="permissao-categoria-de-servicos"
+                                                    onclick="categoriaDeServicosPermissao()">CATEGORIA DE
+                                                SERVIÇOS</label>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <label for="permissao-lista-de-precos-editar"><input type="checkbox"
+                                                            id="permissao-categoria-de-servicos-editar">Editar</label>
+                                                    <label for="permissao-categoria-de-servicos-remover"><input
+                                                            type="checkbox"
+                                                            id="permissao-categoria-de-servicos-remover">Remover</label>
+                                                    <label for="permissao-categoria-de-servicos-movimentacoes"><input
+                                                            type="checkbox"
+                                                            id="permissao-categoria-de-servicos-movimentacoes">Movimentações</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <hr>
+                            <!--Estoque-->
+                            <div>
+                                <div class="titulo-permissao">
+                                    <a href="#"><i class="fa-solid fa-cubes"></i>Estoque</a>
+                                </div>
+                                <hr>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="title-permissao-master">
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">ESTOQUE</label>
+                                        </div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">ENTRADA
+                                                MANUAL</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">ENTRADA
+                                                FISCAL</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">NOTA
+                                                DE
+                                                SAIDA</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">COMPRAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">COTAÇÕES</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">AJUSTES DE
+                                                ESTOQUE</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Apontamento
+                                                Manual</label>
+                                            <label><input type="checkbox" class="selecao">Movimentações</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">INVENTARIOS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                            <label><input type="checkbox" class="selecao">Novo
+                                                Inventario</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">GERENCIAR
+                                                ESTOQUE</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">LISTA
+                                                DE
+                                                ALTERAÇÕES</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">MOVIMENTAÇÕES</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <hr>
+                            <!--Vendas-->
+                            <div class="titulo-permissao">
+                                <div>
+                                    <a href="#"><i class="fa-solid fa-sack-dollar"></i>Vendas</a>
+                                </div>
+                                <hr>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="title-permissao-master">
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">VENDAS</label>
+                                        </div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">CAIXA</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Caixa</label>
+                                            <label><input type="checkbox" class="selecao">Visualizar
+                                                Caixas</label>
+                                            <label><input type="checkbox" class="selecao">Caixa
+                                                Fechados</label>
+                                            <label><input type="checkbox" class="selecao">Sangria</label>
+                                            <label><input type="checkbox" class="selecao">Suprimentos</label>
+                                            <label><input type="checkbox" class="selecao">Descontos</label>
+                                            <label><input type="checkbox" class="selecao">Acrescimo</label>
+                                            <label><input type="checkbox" class="selecao">Fechar
+                                                Caixa</label>
+                                            <label><input type="checkbox" class="selecao">Abertura de
+                                                Caixa</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Caixa</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">LISTA
+                                                DE
+                                                VENDAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Cancelar
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Excluir
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Devoluções /
+                                                Trocas</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Pré
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Editar Pré
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Rascunhos</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Rascunhos</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Consignados</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Consignados</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">VENDAS
+                                                CANCELADAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">PDV</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar Valor do
+                                                Produto</label>
+                                            <label><input type="checkbox" class="selecao">Remover item da
+                                                Venda</label>
+                                            <label><input type="checkbox" class="selecao">Remover
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Preços</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Pré
+                                                Vendas
+                                                PDV</label>
+                                            <label><input type="checkbox" class="selecao">Editar Pré Vendas
+                                                PDV</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Rascunhos
+                                                PDV</label>
+                                            <label><input type="checkbox" class="selecao">Editar Rascunhos
+                                                PDV</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Consignados
+                                                PDV</label>
+                                            <label><input type="checkbox" class="selecao">Editar Consignados
+                                                PDV</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">PRÉ
+                                                VENDAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Pré
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Pré
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Editar Pré
+                                                Vendas</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes Pré
+                                                Vendas</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">RASCUNHOS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Rascunhos</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Rascunhos</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Rascunhos</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">CONSIGNADOS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Consignados</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Consignados</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Consignados</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">VENDA
+                                                BALCÃO</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar Valor do
+                                                Produto
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Remover item da
+                                                Venda
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Remover Vendas
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Preços
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Pré
+                                                Vendas
+                                                PDV
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Editar Pré Vendas
+                                                PDV
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Lista de Rascunhos
+                                                PDV
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Editar Rascunhos
+                                                PDV
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Lista de
+                                                Consignados
+                                                PDV
+                                                BALCÃO</label>
+                                            <label><input type="checkbox" class="selecao">Editar Consignados
+                                                PDV
+                                                BALCÃO</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">SANGRIAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Sangrias</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Valor</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Descrição</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">SUPRIMENTOS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Suprimentos</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Valor</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Descrição</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">DESCONTOS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Descontos</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Valor</label>
+                                            <label><input type="checkbox" class="selecao">Editar
+                                                Descrição</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">MOVIMENTAÇÕES DOS CAIXAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Baixar Relatorios
+                                                de
+                                                Caixas</label>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <hr>
+                                <!--Financeiro-->
+                                <div class="titulo-permissao">
+                                    <div>
+                                        <a href="#" class="title-permissao" id="link-cadastro"><i
+                                                class="fa-solid fa-chart-simple"></i>Financeiro</a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="title-permissao-master">
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">FINANCEIRO</label>
+                                        </div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">CONTAS
+                                                A
+                                                PAGAR</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                            <label><input type="checkbox" class="selecao">Baixa de
+                                                Pagamentos</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">CONTAS
+                                                A
+                                                RECEBER</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                            <label><input type="checkbox" class="selecao">Baixa de
+                                                Recebimentos</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">CONTAS
+                                                PAGAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">CONTAS
+                                                RECEBIDAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Editar</label>
+                                            <label><input type="checkbox" class="selecao">Remover</label>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">GRAFICOS
+                                                DE VENDAS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">GRAFICOS
+                                                DE PRODUTOS MAIS VENDIDOS</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Mesas-->
+                                <hr>
+                                <div class="titulo-permissao">
+                                    <div>
+                                        <a href="#"><i class="fa-solid fa-utensils"></i>Mesas e Comandas</a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="title-permissao-master">
+                                            <label class="title-permissao"><input type="checkbox" class="selecao">MESAS
+                                                E
+                                                COMANDAS</label>
+                                        </div>
+                                        <div>
+                                            <label class="title-permissao"> <input type="checkbox"
+                                                    class="selecao">CADASTRAR
+                                                MESAS</label>
+                                        </div>
+                                        <label><input type="checkbox" class="selecao">Cadastrar
+                                            Mesas</label>
+                                        <label><input type="checkbox" class="selecao">Editar</label>
+                                        <label><input type="checkbox" class="selecao">Remover</label>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"> <input type="checkbox"
+                                                    class="selecao">CONTROLE
+                                                DE MESAS</label>
+                                        </div>
+                                        <label><input type="checkbox" class="selecao">Mesas Fechadas</label>
+                                        <label><input type="checkbox" class="selecao">Mesas Abertas</label>
+                                        <label><input type="checkbox" class="selecao">Tranferir
+                                            Mesas</label>
+                                        <label><input type="checkbox" class="selecao">Editar</label>
+                                        <label><input type="checkbox" class="selecao">Remover item</label>
+                                        <label><input type="checkbox" class="selecao">Remover Mesa</label>
+                                        <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        <label><input type="checkbox" class="selecao">Movimentações</label>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"> <input type="checkbox"
+                                                    class="selecao">CADASTRAR
+                                                COMANDAS</label>
+                                        </div>
+                                        <label><input type="checkbox" class="selecao">Cadastrar
+                                            Comandas</label>
+                                        <label><input type="checkbox" class="selecao">Editar</label>
+                                        <label><input type="checkbox" class="selecao">Remover</label>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div>
+                                            <label class="title-permissao"> <input type="checkbox"
+                                                    class="selecao">CONTROLE
+                                                DE COMANDAS</label>
+                                        </div>
+                                        <label><input type="checkbox" class="selecao">Comandas
+                                            Fechadas</label>
+                                        <label><input type="checkbox" class="selecao">Comandas
+                                            Abertas</label>
+                                        <label><input type="checkbox" class="selecao">Tranferir
+                                            Comandas</label>
+                                        <label><input type="checkbox" class="selecao">Editar</label>
+                                        <label><input type="checkbox" class="selecao">Remover item</label>
+                                        <label><input type="checkbox" class="selecao">Remover
+                                            Comandas</label>
+                                        <label><input type="checkbox" class="selecao">Movimentações</label>
+                                        <label><input type="checkbox" class="selecao">Detalhes</label>
+                                        <label><input type="checkbox" class="selecao">APK controle de
+                                            comandas</label>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <hr>
+                                <!--Relátorios-->
+                                <div class="titulo-permissao">
+                                    <div>
+                                        <a href="#"><i class="fa-regular fa-clipboard"></i>Relatórios</a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="title-permissao-master">
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">RELATORIOS
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Relatório de
+                                                Vendas
+                                            </label>
+                                            <label><input type="checkbox" class="selecao">Relatório </label>
+                                            <label><input type="checkbox" class="selecao">Relatório de
+                                                Lucratividade
+                                                Sintético</label>
+                                            <label><input type="checkbox" class="selecao">Relatório de
+                                                estoque
+                                                de
+                                                produtos</label>
+                                            <label><input type="checkbox" class="selecao">Relatório de
+                                                Comissão
+                                                de
+                                                Vendas</label>
+                                            <label> <input type="checkbox" class="selecao">Relatório de
+                                                Vendas
+                                                Diária(s)
+                                                Detalhado</label>
+                                            <label><input type="checkbox" class="selecao">Relatório Tipos de
+                                                Pagamento</label>
+                                            <label><input type="checkbox" class="selecao">Relatório de Venda
+                                                de
+                                                Produtos</label>
+                                            <label><input type="checkbox" class="selecao">Relatório de
+                                                Comissão
+                                                de
+                                                Vendas</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!--Gestão Pessoal-->
+                                <div class="titulo-permissao">
+                                    <div>
+                                        <div>
+                                            <a href="#">
+                                                <i class="fa-solid fa-person-circle-check"></i>Gestão
+                                                Pessoal</a>
+                                        </div>
+                                        <hr>
+                                        <div class="container-fundo-permissoes">
+                                            <div class="title-permissao-master">
+                                                <label class="title-permissao"><input type="checkbox"
+                                                        class="selecao">GESTÃO
+                                                    PESSOAL</label>
+                                            </div>
+                                            <div>
+                                                <label><input type="checkbox" class="selecao">Novo
+                                                    Funcionarios</label>
+                                                <label><input type="checkbox" class="selecao">Funcionarios</label>
+                                                <label><input type="checkbox" class="selecao">Eventos
+                                                </label>
+                                                <label><input type="checkbox" class="selecao">Apuração
+                                                    Mensal</label>
+                                                <label><input type="checkbox" class="selecao">Despesas
+                                                    Fixas</label>
+                                                <label><input type="checkbox" class="selecao">Despesas
+                                                    Diarias</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!--Configurações-->
+                                <div class="titulo-permissao">
+                                    <div>
+                                        <a href="#"><i class="fa-solid fa-gear"></i>Configurações</a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="container-fundo-permissoes">
+                                    <div>
+                                        <div class="title-permissao-master">
+                                            <label class="title-permissao"><input type="checkbox"
+                                                    class="selecao">CONFIGURAÇÕES</label>
+                                        </div>
+                                        <div>
+                                            <label><input type="checkbox" class="selecao">Configurar
+                                                emitente</label>
+                                            <label><input type="checkbox" class="selecao">Configurar
+                                                email</label>
+                                            <label><input type="checkbox" class="selecao">Ticket</label>
+                                            <label><input type="checkbox" class="selecao">Configurar
+                                                PDV</label>
+                                            <label><input type="checkbox" class="selecao">Senha
+                                                Descontos</label>
+                                            <label><input type="checkbox" class="selecao">Impressoras</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="btn-finalizar">
+                                <a href="/pages/usuarios.html" class="submenu-link btn-cancel"><i
+                                        class="fa-solid fa-x"></i>
+                                    &nbsp;Cancelar</a>
+                               <!--  <button type="button" class="button btn-success" id="salvar"><i class="fa-solid fa-check"></i>
+                                    &nbsp;Salvar</button> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/globais.js"></script>
+    <script src="/js/atribuicoes-usuarios.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/cadastro-usuarios.js"></script>
+  
+</body>
+
+</html>

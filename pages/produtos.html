@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Produtos</title>
+        <link rel="stylesheet" href="/css/variables.css">
+        <link rel="stylesheet" href="/css/components.css">
+        <link rel="stylesheet" href="/css/layouts.css">
+        <link rel="stylesheet" href="/css/cadastro-table.css">
+</head>
+
+<body>
+        <div class="content">
+                <main>
+                        <div class="container-principal">
+                <div>
+                                        <a href="/pages/cadastro-produto.html" class="submenu-link btn-new"><i
+                                                        class="fa-solid fa-plus"></i>
+                                                Novo
+                                                Produto</a>
+                                        <a href="/pages/importacao_produtos.html" class="submenu-link btn-import"
+                                                id="importa-produtos"><i class="fa-solid fa-upload"></i>Importação</a>
+                                        <a class="submenu-link btn-export" href="/pages/exporta-produtos"
+                                                onclick="exportarParaExcel()"><i class="fa-solid fa-download"></i>
+                                                Exportar</a>
+                                        <a href="/pages/movimentacoes-objetivo.html"
+                                                class="submenu-link button btn-movimentacoes"><i
+                                                        class="fa-solid fa-list"></i> Movimentações</a>
+                                        <hr>
+                                        <!--FILTROS-->
+                                        <div>
+                                                <div class="col-vertical">
+                                                        <label for="">Tipo</label>
+
+                                                        <div>
+                                                                <select>
+                                                                        <option value="" selected></option>
+                                                                        <option value="">Ativo</option>
+                                                                        <option value="">Inativo</option>
+                                                                </select>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-vertical">
+                                                        <label for="">Pesquise pelo Nome </label>
+                                                        <div>
+                                                                <input class="pesquisar" type="text">
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="col-vertical">
+
+                                                        <label for="">Categoria</label>
+                                                        <div>
+                                                                <select class="selecionar-categorias">
+                                                                        <option value="" selected></option>
+                                                                        <option value="">Todos</option>
+                                                                        <option value="">Ativo</option>
+                                                                        <option value="">Inativo</option>
+                                                                </select>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-vertical">
+                                                        <label for="">Marcas</label>
+                                                        <div>
+                                                                <select class="selecionar-marcas">
+                                                                        <option value="" selected></option>
+                                                                        <option value="">Todos</option>
+                                                                        <option value="">Ativo</option>
+                                                                        <option value="">Inativo</option>
+                                                                </select>
+                                                                <button class="button btn-filtrar"><i
+                                                                                class="fa-solid fa-magnifying-glass"></i>Pesquisar</button>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                        <label>Total de Produtos Cadastradas: 8</label>
+                                        <!--TABELA-->
+                                        <table id="tabela-dados">
+
+                                                <thead>
+                                                        <tr>
+                                                                <th>AÇÕES</th>
+                                                                <th>IMAGEM</th>
+                                                                <th>DESCRIÇÃO</th>
+                                                                <th>PREÇO DE CUSTO</th>
+                                                                <th>LUCRO %</th>
+                                                                <th>PRECO DE VENDA </th>
+                                                                <th>ESTOQUE ATUAL</th>
+                                                                <th>GERENCIA</th>
+                                                                <th>CATEGORIA</th>
+
+                                                                <th>ATIVO</th>
+                                                        </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto" >
+                                                                </td>
+                                                                <td>COCA-COLA 2L</td>
+                                                                <td>8,69</td>
+                                                                <td>30</td>
+                                                                <td>11,99</td>
+                                                                <td>55</td>
+                                                                <td><label class="nao">NÃO</label></td>
+                                                                <td>REFRIGERANTE</td>
+
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto">
+                                                                </td>
+
+                                                                <td>FANTA LARANJA 2L</td>
+                                                                <td>7,28</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>62</td>
+                                                                <td><label class="nao">NÃO</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"
+                                                                                ></td>
+
+                                                                <td>GUARANA ANTARTICA 2L</td>
+                                                                <td>7,25</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>36</td>
+                                                                <td> <label class="sim">SIM</label> </td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"
+                                                                                ></td>
+
+                                                                <td>COCA-COLA 350ML</td>
+                                                                <td>101,28</td>
+                                                                <td>30</td>
+                                                                <td>129,99</td>
+                                                                <td>12</td>
+                                                                <td><label class="sim">SIM</label></td>
+                                                                <td>WHISK</td>
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"
+                                                                                ></td>
+
+                                                                <td>FANTA LARANJA 350ML</td>
+                                                                <td>8,69</td>
+                                                                <td>30</td>
+                                                                <td>11,99</td>
+                                                                <td>55</td>
+                                                                <td><label class="sim">SIM</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"
+                                                                                ></td>
+
+                                                                <td>PEPSI 0.0 350ML</td>
+                                                                <td>7,28</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>62</td>
+                                                                <td><label class=" nao">NÃO</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>SPRITE 350ML</td>
+                                                                <td>7,25</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>36</td>
+                                                                <td><label class="sim">SIM</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>FANTA UVA 350ML</td>
+                                                                <td>101,28</td>
+                                                                <td>30</td>
+                                                                <td>129,99</td>
+                                                                <td>12</td>
+                                                                <td><label class="nao">NÃO</label></td>
+                                                                <td>WHISK</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+                                                        </tr>
+
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+                                                                <td>COCA-COLA 2L</td>
+                                                                <td>8,69</td>
+                                                                <td>30</td>
+                                                                <td>11,99</td>
+                                                                <td>55</td>
+                                                                <td><label class="nao">NÃO</label></td>
+                                                                <td>REFRIGERANTE</td>
+
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>FANTA LARANJA 2L</td>
+                                                                <td>7,28</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>62</td>
+                                                                <td><label class="nao">NÃO</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>GUARANA ANTARTICA 2L</td>
+                                                                <td>7,25</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>36</td>
+                                                                <td> <label class="sim">SIM</label> </td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>COCA-COLA 350ML</td>
+                                                                <td>101,28</td>
+                                                                <td>30</td>
+                                                                <td>129,99</td>
+                                                                <td>12</td>
+                                                                <td><label class="sim">SIM</label></td>
+                                                                <td>WHISK</td>
+                                                                <td><i class="fa-solid fa-square-xmark"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>FANTA LARANJA 350ML</td>
+                                                                <td>8,69</td>
+                                                                <td>30</td>
+                                                                <td>11,99</td>
+                                                                <td>55</td>
+                                                                <td><label class="sim">SIM</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>PEPSI 0.0 350ML</td>
+                                                                <td>7,28</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>62</td>
+                                                                <td><label class=" nao">NÃO</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>SPRITE 350ML</td>
+                                                                <td>7,25</td>
+                                                                <td>30</td>
+                                                                <td>9,99</td>
+                                                                <td>36</td>
+                                                                <td><label class="sim">SIM</label></td>
+                                                                <td>REFRIGERANTE</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="acoes-tabela">
+                                                                        <button class="btn-acoes btn-edit"
+                                                                                title="Editar"><i
+                                                                                        class="fa-solid fa-pen-to-square"></i></button>
+                                                                        <button class="btn-acoes btn-delete"
+                                                                                title="Remover"><i
+                                                                                        class="fa-solid fa-trash-can"></i></button>
+                                                                        <button class="btn-acoes btn-movements"
+                                                                                title="Movimentações"><i
+                                                                                        class="fa-solid fa-list"></i></button>
+                                                                        <button class="btn-acoes btn-duplicate"
+                                                                                title="Duplicar"><i
+                                                                                        class="fa-regular fa-copy"></i></button>
+                                                                        <button class="btn-acoes btn-barcode"
+                                                                                title="Gerar cod.de Barras"> <i
+                                                                                        class="fa-solid fa-barcode"></i></button>
+                                                                </td>
+                                                                <td><img src="/images/sem-foto.png" alt="Foto do Produto"></td>
+
+                                                                <td>FANTA UVA 350ML</td>
+                                                                <td>101,28</td>
+                                                                <td>30</td>
+                                                                <td>129,99</td>
+                                                                <td>12</td>
+                                                                <td><label class="nao">NÃO</label></td>
+                                                                <td>WHISK</td>
+                                                                <td><i class="fa-solid fa-square-check"></i></td>
+                                                        </tr>
+
+                                                </tbody>
+                                        </table>
+                                </div>
+                        </div>
+                </main>
+        </div>
+
+        <script src="/js/sidebar.js"></script>
+
+</body>
+
+</html>

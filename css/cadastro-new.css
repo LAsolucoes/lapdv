@@ -1,0 +1,13 @@
+.new-cadastro {
+    width: 250px;
+}
+.container-btn-atribuicoes{
+    margin: 10px 30px; 
+}
+.toggle{
+    display: flex;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

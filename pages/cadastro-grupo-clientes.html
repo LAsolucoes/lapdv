@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Marcas</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/layouts.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/cadastro-new.css">
+</head>
+
+<body>
+    <div class="content">
+        <main id="cadastroMarcas">
+            <div class="container-principal">
+                <form action="" method="">
+                    <div>
+                        <h4>Novo Grupo Cliente</h4>
+                        <hr>
+                        <label for="nomeMarca" class="required">Nome</label>
+                        <div>
+                            <input class="new-cadastro" name="nomeMarca" id="nome-marca" type="text">
+                        </div>
+                        <div class="container-btn-atribuicoes">
+                            <label for="">Ativo:</label> <i class="fa-solid fa-info"
+                                onclick="abrirModalInfo('infoModalAtivo')"></i>
+                            <div>
+                                <input type="checkbox" class="custom-checkbox" name="category-ativo" id="category-ativo"
+                                    checked>
+                            </div>
+                            <!--MODAL INFO-->
+                            <div id="infoModalAtivo" class="modal-info">
+                                <div class="modal-content-info">
+                                    <span class="close" onclick="fecharModalInfo('infoModalAtivo')">&times;</span>
+                                    <h2>ATIVO</h2>
+                                    <p>"Ao ativar a opção <strong>'Ativo'</strong>,a Grupo Cliente fica disponivel"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <a href="/pages/grupo-clientes.html" class="submenu-link button btn-cancel"><i
+                                    class="fa-solid fa-arrow-left"></i>Voltar</a>
+                            <button type="submit" class="button btn-success"><i
+                                    class="fa-solid fa-check"></i>Salvar</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/modal.js"></script>
+
+</body>
+
+</html>

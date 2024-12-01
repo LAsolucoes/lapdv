@@ -1,0 +1,37 @@
+.col-vertical-checkbox{
+    margin: 10px 50px;
+}
+input#senha-permitir-desconto,
+label#nome-senha-permitir-desconto,
+i#icon-visualizar-senha-descontos,
+i#icon-ocutar-senha-descontos{
+    display: none;
+}
+div.permissoes label, input[type ='checkbox']{
+    cursor: pointer;
+    margin: 2px;
+}
+.permissao-titulo{
+    background-color: var(--dark) !important;
+    border-radius: 5px;
+    margin-bottom:5px;
+    width: 200px;
+    cursor: pointer;
+    padding: 5px;
+}
+.permissao-titulo label{
+    cursor: pointer;
+    margin: 3px;
+    color: var(--white) !important;
+}
+
+div.titulo-permissao a{
+    color: var(--gray);
+    font-size: 15px;
+}
+div.container-fundo-permissoes{
+    background-color: var(--light);
+    padding: 20px;
+    border: 1px solid var(--gray-secondary);
+    border-radius: 5px;
+}
