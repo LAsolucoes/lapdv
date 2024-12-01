@@ -6,6 +6,7 @@ document.getElementById('formularioLogin').addEventListener('submit' , function(
 
     if ((inputLogin.value == "adm" || inputLogin.value == "adm@gmail.com") && inputSenha.value == "123") {
         location.href = "/pages/dashboard.html"
+        return
         
     } else {
         erroCredenciais.style.display = 'block'
