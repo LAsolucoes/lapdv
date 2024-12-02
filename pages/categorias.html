@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="/css/components.css">
     <link rel="stylesheet" href="/css/layouts.css">
     <link rel="stylesheet" href="/css/cadastro-table.css">
-    
+
 </head>
 
 <body>
-    <div class="content" id="#categoria">
+    <!-- <div class="content" id="#categoria"> -->
+        <div id="sidebar-container"></div>
+    <div>
+
         <main>
             <div class="container-principal">
                 <div>
@@ -42,7 +45,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -50,7 +53,25 @@
             </div>
         </main>
     </div>
-    <script src="/js/sidebar.js"></script>
+    <script>
+   /*       // Carregar o sidebar dinamicamente
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verificar se não estamos na página do PDV
+      if (window.location.pathname !== '/pdv.html') {
+        const sidebarContainer = document.getElementById('sidebar-container');
+
+        // Carregar o conteúdo do sidebar.html
+        fetch('/pages/sidebar.html')
+          .then(response => response.text())
+          .then(data => {
+            sidebarContainer.innerHTML = data;
+          })
+          .catch(error => console.error('Erro ao carregar o sidebar:', error));
+      }
+    });  */
+    </script>
+    <script src="js/teste.js"></script>
+    <script src="js/script.js"></script>
     <script src="/js/tabela-categoria.js"></script>
 </body>
 

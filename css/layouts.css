@@ -4,7 +4,9 @@ body {
   padding: 0%;
 }
 /* CONTAINER */
+
 .container {
+  display: flex;
   align-items: center;
   justify-content: space-around;
   font-family: var(--fonte-texto);
@@ -13,12 +15,14 @@ body {
 }
 
 .container-principal {
+  position: absolute;
+  top: 12%;
+  left: 230px;
+  right: 2%;
+  height: auto;
   background-color: var(--white);
-  align-items: center;
-  justify-content: center;
   padding: 20px;
   font-family: var(--fonte-texto);
-  margin: 80px 20px 0px 0px;
   border-radius: 5px;
   box-shadow: 0px 0px 11px 0px var(--gray-ligth);
 }
@@ -119,11 +123,12 @@ body {
 
 /*TABELAS DA PESQUISA*/
 table {
+  background-color: white;
   border-collapse: collapse;
   font-family: var(--fonte-texto);
-  margin-top: 5px;
   width: 100%;
-  text-align: left;
+  overflow-x: auto;
+  padding: 10px;
 }
 
 thead {
@@ -135,14 +140,14 @@ thead {
 }
 
 thead th {
-  padding: 10px;
-  font-size: 10px;
+  padding: 8px 5px;
+  font-size: 0.6rem;
   text-align: center;
 }
 
 tbody td {
  text-align: center;
- font-size: 11px;
+ font-size: 0.6rem;
 }
 
 tbody tr:nth-child(even) {
@@ -176,8 +181,6 @@ hr {
 /*=============AÇÕES DAS TABELAS DA PESQUISA==================*/
 .acoes-tabela {
   display: flex;
-  align-items: center;
-  margin: 10px;
 }
 
 .acoes-tabela button {
