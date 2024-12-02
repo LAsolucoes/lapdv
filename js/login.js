@@ -5,7 +5,7 @@ document.getElementById('formularioLogin').addEventListener('submit' , function(
     let erroCredenciais = document.getElementById('erroCredenciais')
 
     if ((inputLogin.value == "adm" || inputLogin.value == "adm@gmail.com") && inputSenha.value == "123") {
-        location.href = "/pages/dashboard.html"
+        location.href = "/pages/sidebar.html"
         return
         
     } else {

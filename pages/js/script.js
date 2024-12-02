@@ -1,4 +1,4 @@
-function openCloseMenuSidebar(menuId) {
+/* function openCloseMenuSidebar(menuId) {
     let menuSidebar = document.getElementById(menuId)
     menuSidebar.classList.toggle("hidden")
     
@@ -10,4 +10,4 @@ function openCloseMenuSidebar(menuId) {
  document.getElementById("menu_mesas").addEventListener("click" , () => openCloseMenuSidebar("mesas"))
  document.getElementById("menu_comandas").addEventListener("click" , () => openCloseMenuSidebar("comandas"))
  document.getElementById("menu_relatorios").addEventListener("click" , () => openCloseMenuSidebar("relatorios"))
- document.getElementById("menu_configuracoes").addEventListener("click" , () => openCloseMenuSidebar("configuracoes"))
+ document.getElementById("menu_configuracoes").addEventListener("click" , () => openCloseMenuSidebar("configuracoes")) */
