@@ -1,8 +1,11 @@
 .new-cadastro {
-    width: 250px;
+    width: auto;
 }
 .container-btn-atribuicoes{
     margin: 10px 30px; 
+    display: flex;
+    flex-direction: column;
+    
 }
 .toggle{
     display: flex;

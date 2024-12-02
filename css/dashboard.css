@@ -105,7 +105,7 @@ header .name-user:hover i {
   float: left;
   top: 0;
   left: 0;
-  max-width: 230px;
+ 
   height: 100%;
   background-color: var(--dark);
   border: 1px solid var(--gray);
@@ -113,13 +113,9 @@ header .name-user:hover i {
   position: fixed;
   transition: width 0.6s ease;
   overflow-y: auto;
- 
+
 }
 
-.sidebar-close{
-  display: none;
-  width: 60px;
-}
 .sidebar a {
   text-decoration: none;
   color: var(--gray);
@@ -127,7 +123,7 @@ header .name-user:hover i {
 }
 .sidebar ul {
   list-style: none;
-padding-left: 10px;
+  padding-left: 10px;
   padding-top: 5px;
 }
 .sidebar i {
@@ -135,6 +131,7 @@ padding-left: 10px;
   font-size: 15px;
   padding: 10px;
 }
+
 .hidden {
   display: none;
 }
@@ -144,7 +141,7 @@ padding-left: 10px;
 .conteudo-nav:hover {
   background-color: var(--primary);
   color: var(--white);
-  border-radius: 25px 0px 0px 25px;
+  border-radius: 25px;
   cursor: pointer;
 }
 .conteudo-nav:hover a,
@@ -158,17 +155,11 @@ padding-left: 10px;
   }
 
 /*=====================================*/
-
-/* Estilos para o conteúdo */
-.content {
-  margin-left: 230px;
-  /* largura do sidebar */
-}
-
 .container {
   margin-top: 0px;
   align-items: center;
   justify-content: center;
+
 }
 
 .container-btn-logout {

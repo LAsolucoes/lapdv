@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Vindo - Dashboard</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/layouts.css">
     <link rel="stylesheet" href="/css/components.css">
@@ -20,67 +22,59 @@
             <img class="avatar" src="/images/logo.jpg" alt="">
         </div>
     </header>
+    <div class="sidebar">
 
-
-    <div class="sidebar"  id="sidebar-close">
-        
         <div class="logo-texto">
             <img class="img-logo" src="../images/logo.jpg" alt="">
             <label class="name-logo" for="">LA PDV</label>
-            <i class="fa-solid fa-angles-left btn-close"></i>
+            <i class="fa-solid fa-angles-left btn-close-sidebar"></i>
         </div>
-        
-        
+
+
         <ul>
             <div class="conteudo-nav">
-                <li><a href="/pages/graficos.html" class="submenu-link"><i class="fa-solid fa-home"></i>Home</a>
+                <li><a href="/pages/graficos.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
                 </li>
             </div>
             <!--CADASTROS-->
             <div class="conteudo-nav">
-                <li><a href="#cadastros" id="menu_cadastros"><i class="fa-solid fa-address-card"></i>Cadastros</a></li>
+                <li><a href="#cadastros" id="menu_cadastros"><i
+                            class="fa-solid fa-address-card"></i><span>Cadastros</span></a></li>
             </div>
             <ul class="hidden" id="cadastros">
                 <div class="vertical-line">
                     <div class="conteudo-nav">
-                        <li><a href="/pages/categorias.html" id="categorias">
-                            <i class="fa-solid fa-list"></i>Categoria</a></li>
+                        <li><a href="/pages/categorias.html">
+                                <i class="fa-solid fa-list"></i>Categoria</a></li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/marcas.html" class="submenu-link"><i
-                                    class="fa-regular fa-copyright"></i>Marcas</a></li>
+                        <li><a href="/pages/marcas.html"><i class="fa-solid fa-shirt"></i>Marcas</a></li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/produtos.html" class="submenu-link"><i
-                                    class="fa-solid fa-shirt"></i>Produtos</a></li>
+                        <li><a href="/pages/produtos.html"><i class="fa-solid fa-shirt"></i>Produtos</a></li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/clientes.html" class="submenu-link"><i
-                                    class="fa-solid fa-address-book"></i>Clientes</a></li>
+                        <li><a href="/pages/clientes.html"><i class="fa-solid fa-address-book"></i>Clientes</a></li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/grupo-clientes.html" class="submenu-link"><i
-                                    class="fa-solid fa-user-group"></i>Grupo de Clientes</a></li>
+                        <li><a href="/pages/grupo-clientes.html"><i class="fa-solid fa-user-group"></i>Grupo de
+                                Clientes</a></li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/fornecedores.html" class="submenu-link"><i
-                                    class="fa-solid fa-truck-field"></i>Fornecedores</a></li>
+                        <li><a href="/pages/fornecedores.html"><i class="fa-solid fa-truck-field"></i>Fornecedores</a>
+                        </li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/lista-de-precos.html" class="submenu-link"><i
-                                    class="fa-solid fa-money-check-dollar"></i>Lista de Preços</a></li>
+                        <li><a href="/pages/lista-de-precos.html"><i class="fa-solid fa-money-check-dollar"></i>Lista de
+                                Preços</a></li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/usuarios.html" class="submenu-link"><i
-                                    class="fa-solid fa-users"></i>Usuarios</a></li>
+                        <li><a href="/pages/usuarios.html"><i class="fa-regular fa-credit-card"></i>Taxa de Cartões</a>
+                        </li>
                     </div>
                     <div class="conteudo-nav">
-                        <li><a href="/pages/taxa-cartoes.html" class="submenu-link"><i
-                                    class="fa-regular fa-credit-card"></i>Taxa de Cartões</a></li>
-                    </div>
-                    <div class="conteudo-nav">
-                        <li><a href="/pages/taxa-vendas.html" class="submenu-link"><i
-                                    class="fa-solid fa-calculator"></i></i>Taxas de Vendas</a></li>
+                        <li><a href="/pages/taxa-vendas.html"><i class="fa-solid fa-calculator"></i></i>Taxas de
+                                Vendas</a></li>
                     </div>
                     <div class="conteudo-nav">
                         <li><a href="#"><i class="fa-solid fa-layer-group"></i>Categoria de Serviços</a></li>
@@ -92,7 +86,7 @@
             </ul>
             <!--ESTOQUE-->
             <div class="conteudo-nav">
-                <li><a href="#estoque" id="menu_estoque"><i class="fa-solid fa-cubes"></i>Estoque</a>
+                <li><a href="#estoque" id="menu_estoque"><i class="fa-solid fa-cubes"></i><span>Estoque</span></a>
                 </li>
             </div>
             <ul class="hidden" id="estoque">
@@ -132,7 +126,7 @@
             </ul>
             <!--VENDAS-->
             <div class="conteudo-nav">
-                <li><a href="#vendas" id="menu_vendas"><i class="fa-solid fa-sack-dollar"></i>Vendas</a>
+                <li><a href="#vendas" id="menu_vendas"><i class="fa-solid fa-sack-dollar"></i><span>Vendas</span></a>
                 </li>
             </div>
             <ul class="hidden" id="vendas">
@@ -171,7 +165,7 @@
                         <li><a href="#"><i class="fa-solid fa-minus"></i>Descontos</a></li>
                     </div>
                     <div class="conteudo-nav">
-                <li><a href="#"><i class="fa-solid fa-minus"></i>Descontos</a></li>
+                        <li><a href="#"><i class="fa-solid fa-minus"></i>Descontos</a></li>
                         </li>
                     </div>
                 </div>
@@ -179,7 +173,7 @@
             <!--FINANCEIRO-->
             <div class="conteudo-nav">
                 <li><a href="#financeiro" id="menu_financeiro"><i class="fa-solid
-                                fa-chart-simple"></i>Financeiro</a></li>
+                                fa-chart-simple"></i><span>Financeiro</span></a></li>
             </div>
             <ul class="hidden" id="financeiro">
                 <div class="vertical-line">
@@ -205,7 +199,7 @@
             </ul>
             <!--MESAS-->
             <div class="conteudo-nav">
-                <li><a href="#mesas" id="menu_mesas"><i class="fa-solid fa-utensils"></i>Mesas</a>
+                <li><a href="#mesas" id="menu_mesas"><i class="fa-solid fa-utensils"></i><span>Mesas</span></a>
                 </li>
             </div>
             <ul class="hidden" id="mesas">
@@ -229,7 +223,7 @@
             </ul>
             <!--COMANDAS-->
             <div class="conteudo-nav">
-                <li><a href="#comandas" id="menu_comandas"><i class="fa-solid fa-barcode"></i>Comandas</a>
+                <li><a href="#comandas" id="menu_comandas"><i class="fa-solid fa-barcode"></i><span>Comandas</span></a>
                 </li>
             </div>
             <ul class="hidden" id="comandas">
@@ -253,7 +247,8 @@
             </ul>
             <!--RELATORIOS-->
             <div class="conteudo-nav">
-                <li><a href="#relatorios" id="menu_relatorios"><i class="fa-regular fa-clipboard"></i>Relatórios</a>
+                <li><a href="#relatorios" id="menu_relatorios"><i
+                            class="fa-regular fa-clipboard"></i><span>Relatórios</span></a>
                 </li>
             </div>
             <ul class="hidden" id="relatorios">
@@ -275,7 +270,8 @@
             </ul>
             <!--CONFIGURAÇÕES-->
             <div class="conteudo-nav">
-                <li><a href="#" id="menu_configuracoes"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+                <li><a href="#" id="menu_configuracoes"><i class="fa-solid fa-gear"></i><span>Configurações</span></a>
+                </li>
             </div>
             <ul class="hidden" id="configuracoes">
                 <div class="vertical-line">
@@ -301,14 +297,16 @@
             </ul>
             <hr>
             <div class="container-btn-logout">
-                <a class="btn-logout" href="#"><i class="fa-solid fa-right-from-bracket fa-bounce"></i>SAIR</a>
+                <a class="btn-logout" href="#"><i
+                        class="fa-solid fa-right-from-bracket fa-bounce"></i><span>SAIR</span></a>
             </div>
         </ul>
 
     </div>
 
-   
+
     <script src="/js/sidebar.js"></script>
+
 
 
 

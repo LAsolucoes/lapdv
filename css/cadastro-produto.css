@@ -3,7 +3,7 @@
     width: 120px;
 }
 .cod-barras {
-    width: 300px;
+    max-width: 200px;
 }
 .descricao {
     width: 42%;

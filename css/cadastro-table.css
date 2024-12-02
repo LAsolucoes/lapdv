@@ -1,18 +1,16 @@
-.pesquisar{
-     width: 250px;
+.pesquisar {
+  margin-bottom: 10px;
+  width: auto;
 }
 
 .selecionar-marcas,
-.selecionar-categorias{
-     width: 120px;
+.selecionar-categorias {
+  width: 120px;
 }
-.acoes-tabela{
-     padding: 10px;
+.acoes-tabela {
+  padding: 10px;
 }
-hr{
-     margin-top: 15px;
+hr {
+  margin-top: 15px;
 }
-
-
-
 
